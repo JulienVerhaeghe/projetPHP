@@ -1,0 +1,24 @@
+HelloTheWorld:
+    pattern:  /hello-world
+    defaults: { _controller: JulienParcInformatiqueBundle:ParcInfo:index }
+
+
+parcInfo_accueil:
+    pattern:   /
+    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:index }
+
+parcInfo_voir_salle:
+    pattern:   /salle/{id}
+    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:voir_salle }
+    
+parcInfo_voir_ordi:
+    pattern:   /ordi/{id}
+    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:voir_ordi}
+
+parcInfo_voir_liste_salle:
+    pattern:   /listeSalle/
+    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:voir_liste_salle }
+    
+parcInfo_voir_liste_ordi:
+    pattern:   /listeOrdi/
+    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:voir_liste_ordi }
