@@ -1,0 +1,22 @@
+{% extends "JulienParcInformatiqueBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Salle - {{ parent() }}
+{% endblock %}
+ 
+{% block sdzblog_body %}
+ 
+  <h2>liste des salles</h2>
+  
+  <ul>
+  {% for salle in liste_salle %}
+          <li><a href="{{ path('parcInfo_voir_salle', {'id': salle.id}) }}">{{ salle.nom }}</a></li>
+  {% else %}
+    <li>Pas d'utilisateur trouvé.</li>
+  {% endfor %}
+</ul>
+   
+  
+ 
+ 
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "JulienParcInformatiqueBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Lecture d'une salle - {{ parent() }}
+{% endblock %}
+ 
+{% block sdzblog_body %}
+ 
+  <h2>
+
+        {{ package.name }}
+
+    </h2>
+  
+  {% if package.logiciels.count > 0 %}
+    - Logiciel :
+    {% for logiciel in package.logiciels %}
+      {{ logiciel.name }}
+      {% if not loop.last %} - {% endif %}
+    {% endfor %}
+  {% endif %}
+
+ <p>
+    <a href="{{ path('parcInfo_voir_liste_package') }}" class="btn">
+      <i class="icon-chevron-left"></i>
+      Retour à la liste
+    </a>
+    <a href="{{ path('parcInfo_modifier_package', {'id': package.id}) }}" class="btn">
+      <i class="icon-edit"></i>
+      Modifier le package
+    </a>
+    <a href="{{ path('parcInfo_supprimer_package', {'id': package.id}) }}" class="btn">
+      <i class="icon-trash"></i>
+      Supprimer le package
+    </a>
+  </p>
+    
+ 
+ 
+{% endblock %}

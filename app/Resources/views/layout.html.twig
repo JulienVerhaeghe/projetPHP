@@ -13,22 +13,24 @@
   <body>
     <div class="container">
       <div id="header" class="hero-unit">
-        <h1>Mon Projet Symfony2</h1>
-        <p>Ce projet est propulsé par Symfony2, et construit grâce au tutoriel du siteduzero.</p>
-        <p><a class="btn btn-primary btn-large" href="http://www.siteduzero.com/tutoriel-3-517569-symfony2.html">
-          Lire le tutoriel »
-        </a></p>
+        <h1>Gestion de parc informatique</h1>
+       
       </div>
  
       <div class="row">
         <div id="menu" class="span3">
-          <h3>Le blog</h3>
+          <h3>Menu</h3>
           <ul class="nav nav-pills nav-stacked">
-            <li><a href="{{ path('sdzblog_accueil') }}">Accueil du blog</a></li>
-            <li><a href="{{ path('sdzblog_ajouter') }}">Ajouter un article</a></li>
+            <li><a href="{{ path('parcInfo_accueil') }}">Accueil</a></li>
+            <li><a href="{{ path('parcInfo_voir_liste_salle') }}">Liste des salles</a></li>
+            <li><a href="{{ path('parcInfo_voir_liste_ordi') }}">Liste des ordinateurs</a></li>
+            <li><a href="{{ path('parcInfo_voir_liste_package') }}">Liste des packages</a></li>
+            <li><a href="{{ path('parcInfo_ajouter_salle') }}">Ajouter une salle</a></li>
+            <li><a href="{{ path('parcInfo_ajouter_ordi') }}">Ajouter un ordi</a></li>
+            <li><a href="{{ path('parcInfo_ajouter_package') }}">Ajouter un package</a></li>
+            <li><a href="{{ path('parcInfo_ajouter_OS') }}">Ajouter un OS</a></li>
+            
           </ul>
-                     
-          {% render "SdzBlogBundle:Blog:menu" with {'nombre': 3} %}
         </div>
         <div id="content" class="span9">
           {% block body %}
@@ -39,7 +41,7 @@
       <hr>
  
       <footer>
-        <p>The sky's the limit © 2012 and beyond.</p>
+        <p>Projet réalisé dans le cadre d'un projet Gobelins CRM.</p>
       </footer>
     </div>
  

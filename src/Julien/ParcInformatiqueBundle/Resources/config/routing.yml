@@ -1,20 +1,27 @@
-HelloTheWorld:
-    pattern:  /hello-world
-    defaults: { _controller: JulienParcInformatiqueBundle:ParcInfo:index }
-
-
 parcInfo_accueil:
     pattern:   /
     defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:index }
-
+#------------------------ voir entité
 parcInfo_voir_salle:
     pattern:   /salle/{id}
     defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:voir_salle }
-    
+
+parcInfo_voir_reference:
+    pattern:   /reference/{id}
+    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:voir_reference }
+ 
 parcInfo_voir_ordi:
     pattern:   /ordi/{id}
     defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:voir_ordi}
-
+    
+parcInfo_voir_package:
+    pattern:   /package/{id}
+    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:voir_package}
+    
+parcInfo_voir_OS:
+    pattern:   /OS/{id}
+    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:voir_OS}
+#------------------------ voir liste d'entité
 parcInfo_voir_liste_salle:
     pattern:   /listeSalle/
     defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:voir_liste_salle }
@@ -22,3 +29,59 @@ parcInfo_voir_liste_salle:
 parcInfo_voir_liste_ordi:
     pattern:   /listeOrdi/
     defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:voir_liste_ordi }
+    
+parcInfo_voir_liste_package:
+    pattern:   /listepackage/
+    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:voir_liste_package }
+#------------------------ ajouter entité
+parcInfo_ajouter_salle:
+    pattern:   /ajouter_salle
+    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:ajouter_salle}
+
+parcInfo_ajouter_reference:
+    pattern:   /ajouter_reference
+    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:ajouter_reference}
+
+parcInfo_ajouter_ordi:
+    pattern:   /ajouter_ordi
+    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:ajouter_ordi}
+
+parcInfo_ajouter_package:
+    pattern:   /ajouter_package
+    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:ajouter_package}
+
+parcInfo_ajouter_OS:
+    pattern:   /ajouter_OS
+    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:ajouter_OS}
+#------------------------ modifier entité    
+parcInfo_modifier_salle:
+    pattern:   /modifier_salle/{id}
+    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:modifier_salle}
+
+parcInfo_modifier_ordi:
+    pattern:   /modifier_ordi/{id}
+    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:modifier_ordi}
+
+parcInfo_modifier_reference:
+    pattern:   /ajouter_reference
+    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:modifier_reference}
+      
+parcInfo_modifier_package:
+    pattern:   /modifier_package/{id}
+    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:modifier_package}
+#------------------------ supprimer entité
+parcInfo_supprimer_salle:
+    pattern:   /supprimer_salle/{id}
+    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:supprimer_salle}
+
+parcInfo_supprimer_ordi:
+    pattern:   /supprimer_ordi/{id}
+    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:supprimer_ordi}
+
+parcInfo_supprimer_reference:
+    pattern:   /supprimer_reference/{id}
+    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:supprimer_ordi}
+
+parcInfo_supprimer_package:
+    pattern:   /supprimer_package/{id}
+    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:supprimer_reference}

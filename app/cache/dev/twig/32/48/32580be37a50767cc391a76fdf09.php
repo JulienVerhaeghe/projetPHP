@@ -39,51 +39,68 @@ class __TwigTemplate_324832580be37a50767cc391a76fdf09 extends Twig_Template
   <body>
     <div class=\"container\">
       <div id=\"header\" class=\"hero-unit\">
-        <h1>Mon Projet Symfony2</h1>
-        <p>Ce projet est propulsé par Symfony2, et construit grâce au tutoriel du siteduzero.</p>
-        <p><a class=\"btn btn-primary btn-large\" href=\"http://www.siteduzero.com/tutoriel-3-517569-symfony2.html\">
-          Lire le tutoriel »
-        </a></p>
+        <h1>Gestion de parc informatique</h1>
+       
       </div>
  
       <div class=\"row\">
         <div id=\"menu\" class=\"span3\">
-          <h3>Le blog</h3>
+          <h3>Menu</h3>
           <ul class=\"nav nav-pills nav-stacked\">
             <li><a href=\"";
+        // line 24
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_accueil"), "html", null, true);
+        echo "\">Accueil</a></li>
+            <li><a href=\"";
+        // line 25
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_voir_liste_salle"), "html", null, true);
+        echo "\">Liste des salles</a></li>
+            <li><a href=\"";
+        // line 26
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_voir_liste_ordi"), "html", null, true);
+        echo "\">Liste des ordinateurs</a></li>
+            <li><a href=\"";
         // line 27
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sdzblog_accueil"), "html", null, true);
-        echo "\">Accueil du blog</a></li>
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_voir_liste_package"), "html", null, true);
+        echo "\">Liste des packages</a></li>
             <li><a href=\"";
         // line 28
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sdzblog_ajouter"), "html", null, true);
-        echo "\">Ajouter un article</a></li>
-          </ul>
-                     
-          ";
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_salle"), "html", null, true);
+        echo "\">Ajouter une salle</a></li>
+            <li><a href=\"";
+        // line 29
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_ordi"), "html", null, true);
+        echo "\">Ajouter un ordi</a></li>
+            <li><a href=\"";
+        // line 30
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_package"), "html", null, true);
+        echo "\">Ajouter un package</a></li>
+            <li><a href=\"";
         // line 31
-        echo $this->env->getExtension('actions')->renderAction("SdzBlogBundle:Blog:menu", array("nombre" => 3), array());
-        // line 32
-        echo "        </div>
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_OS"), "html", null, true);
+        echo "\">Ajouter un OS</a></li>
+            
+          </ul>
+        </div>
         <div id=\"content\" class=\"span9\">
           ";
-        // line 34
-        $this->displayBlock('body', $context, $blocks);
         // line 36
+        $this->displayBlock('body', $context, $blocks);
+        // line 38
         echo "        </div>
       </div>
  
       <hr>
  
       <footer>
-        <p>The sky's the limit © 2012 and beyond.</p>
+        <p>Projet réalisé dans le cadre d'un projet Gobelins CRM.</p>
       </footer>
     </div>
  
   ";
-        // line 46
+        // line 48
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 51
+        // line 53
         echo " 
   </body>
 </html>";
@@ -105,22 +122,22 @@ class __TwigTemplate_324832580be37a50767cc391a76fdf09 extends Twig_Template
     ";
     }
 
-    // line 34
+    // line 36
     public function block_body($context, array $blocks = array())
     {
-        // line 35
+        // line 37
         echo "          ";
     }
 
-    // line 46
+    // line 48
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 47
+        // line 49
         echo "    ";
-        // line 48
+        // line 50
         echo "    <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js\"></script>
     <script type=\"text/javascript\" src=\"";
-        // line 49
+        // line 51
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/bootstrap.js"), "html", null, true);
         echo "\"></script>
   ";
@@ -138,6 +155,6 @@ class __TwigTemplate_324832580be37a50767cc391a76fdf09 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  124 => 49,  121 => 48,  119 => 47,  116 => 46,  112 => 35,  109 => 34,  102 => 9,  99 => 8,  93 => 6,  87 => 51,  85 => 46,  73 => 36,  71 => 34,  67 => 32,  65 => 31,  59 => 28,  55 => 27,  37 => 11,  35 => 8,  30 => 6,  23 => 1,);
+        return array (  141 => 51,  138 => 50,  136 => 49,  133 => 48,  129 => 37,  126 => 36,  119 => 9,  116 => 8,  110 => 6,  104 => 53,  102 => 48,  90 => 38,  88 => 36,  80 => 31,  76 => 30,  72 => 29,  68 => 28,  64 => 27,  60 => 26,  56 => 25,  52 => 24,  37 => 11,  35 => 8,  23 => 1,  58 => 12,  55 => 11,  50 => 13,  43 => 8,  40 => 7,  33 => 4,  30 => 6,  47 => 11,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
     }
 }

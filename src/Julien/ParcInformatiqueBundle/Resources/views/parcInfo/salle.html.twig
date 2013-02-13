@@ -1,0 +1,14 @@
+{# On utilise une variable temporaire, qu'on définit à false si elle n'est pas déjà définit #}
+{% set accueil = accueil|default(false) %}
+ 
+<h2>
+ 
+    {{ salle.nom }} [ {{ salle.localisation }} ]
+ 
+</h2>
+ 
+ 
+<div class="well">
+  {{ salle.description }}
+</div>
+ 

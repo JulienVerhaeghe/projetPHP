@@ -1,0 +1,45 @@
+{% extends "JulienParcInformatiqueBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Lecture d'un ordinateur - {{ parent() }}
+{% endblock %}
+ 
+{% block sdzblog_body %}
+ 
+  <h2>
+
+        {{ ordi.name }} [ {{ ordi.salle.nom}} ]
+
+    </h2>
+ {% if ordi.os.count > 0 %}
+    - Systeme d'exploitation :
+    {% for os in ordi.os %}
+      {{ os.name }}
+      {% if not loop.last %} - {% endif %}
+    {% endfor %}
+  {% endif %}
+      
+      {% if ordi.package.count > 0 %}
+    <br/> - Package de logiciel:
+    {% for package in ordi.package %}
+      {{ package.name }}
+      {% if not loop.last %} - {% endif %}
+    {% endfor %}
+  {% endif %}
+    
+  <p>
+    <a href="{{ path('parcInfo_voir_liste_ordi') }}" class="btn">
+      <i class="icon-chevron-left"></i>
+      Retour à la liste
+    </a>
+    <a href="{{ path('parcInfo_modifier_ordi', {'id': ordi.id}) }}" class="btn">
+      <i class="icon-edit"></i>
+      Modifier l'ordinateur
+    </a>
+    <a href="{{ path('parcInfo_supprimer_ordi', {'id': ordi.id}) }}" class="btn">
+      <i class="icon-trash"></i>
+      Supprimer l'ordi
+    </a>
+  </p>
+ 
+{% endblock %}

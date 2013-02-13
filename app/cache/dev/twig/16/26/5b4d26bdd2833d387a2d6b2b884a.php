@@ -26,40 +26,35 @@ class __TwigTemplate_16265b4d26bdd2833d387a2d6b2b884a extends Twig_Template
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 5
+    // line 3
     public function block_title($context, array $blocks = array())
     {
-        // line 6
-        echo "  Blog - ";
+        // line 4
+        echo "    ";
         $this->displayParentBlock("title", $context, $blocks);
         echo "
 ";
     }
 
-    // line 9
+    // line 7
     public function block_body($context, array $blocks = array())
     {
-        // line 10
-        echo " 
-  ";
-        // line 12
-        echo "  <h1>Blog</h1>
- 
-  <hr>
+        // line 8
+        echo "  <hr>
  
   ";
-        // line 17
+        // line 11
         echo "  ";
         $this->displayBlock('sdzblog_body', $context, $blocks);
-        // line 19
+        // line 13
         echo " 
 ";
     }
 
-    // line 17
+    // line 11
     public function block_sdzblog_body($context, array $blocks = array())
     {
-        // line 18
+        // line 12
         echo "  ";
     }
 
@@ -75,6 +70,6 @@ class __TwigTemplate_16265b4d26bdd2833d387a2d6b2b884a extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  63 => 18,  60 => 17,  55 => 19,  52 => 17,  46 => 12,  43 => 10,  40 => 9,  33 => 6,  30 => 5,  81 => 21,  74 => 19,  66 => 16,  62 => 15,  56 => 14,  53 => 13,  48 => 12,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
+        return array (  58 => 12,  55 => 11,  50 => 13,  43 => 8,  40 => 7,  33 => 4,  30 => 3,  47 => 11,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
     }
 }

@@ -1,0 +1,22 @@
+{% extends "JulienParcInformatiqueBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Ordinateur - {{ parent() }}
+{% endblock %}
+ 
+{% block sdzblog_body %}
+ 
+  <h2>liste des packages</h2>
+  
+  <ul>
+  {% for package in liste_package %}
+          <li><a href="{{ path('parcInfo_voir_package', {'id': package.id}) }}">{{ package.name }}</a></li>
+  {% else %}
+    <li>Pas de package trouvé.</li>
+  {% endfor %}
+</ul>
+   
+  
+ 
+ 
+{% endblock %}

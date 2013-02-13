@@ -1,0 +1,22 @@
+{% extends "JulienParcInformatiqueBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Ordinateur - {{ parent() }}
+{% endblock %}
+ 
+{% block sdzblog_body %}
+ 
+  <h2>liste des Ordinateurs</h2>
+  
+  <ul>
+  {% for ordi in liste_ordi %}
+          <li><a href="{{ path('parcInfo_voir_ordi', {'id': ordi.id}) }}">{{ ordi.name }} | </a></li>
+  {% else %}
+    <li>Pas d'utilisateur trouvé.</li>
+  {% endfor %}
+</ul>
+   
+  
+ 
+ 
+{% endblock %}

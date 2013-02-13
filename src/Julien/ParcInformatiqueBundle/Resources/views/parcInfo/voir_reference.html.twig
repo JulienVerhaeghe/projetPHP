@@ -1,0 +1,21 @@
+{% extends "JulienParcInformatiqueBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Lecture d'un ordinateur - {{ parent() }}
+{% endblock %}
+ 
+{% block sdzblog_body %}
+ 
+  <h2>
+
+        {{ reference.name }} [ {{ reference.marque.name}} ]
+
+    </h2>
+ {% if reference.urlProduit %}
+  <a href="{{reference.urlProduit}}">url du produit</a>
+    
+  {% endif %}
+      
+     
+ 
+{% endblock %}

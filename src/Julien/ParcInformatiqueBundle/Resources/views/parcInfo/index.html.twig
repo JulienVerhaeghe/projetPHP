@@ -1,14 +1,21 @@
 {% extends "JulienParcInformatiqueBundle::layout.html.twig" %}
- 
+  
 {% block title %}
   Accueil - {{ parent() }}
 {% endblock %}
  
 {% block sdzblog_body %}
  
-  <h2>Liste des articles</h2>
+  <h2>Liste des salles</h2>
  
-  <p>hello mother fucker</p>
-   
+  <ul>
+    {% for salle in salles %}
+      <li>
+        <a href="{{ path('parcInfo_voir_salle', {'id': salle.id}) }}">{{ salle.nom }}</a>
+      </li>
+    {% else %}
+      <li>Pas (encore !) d'salles</li>
+    {% endfor %}
+  </ul>
  
 {% endblock %}

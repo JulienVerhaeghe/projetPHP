@@ -20,63 +20,37 @@ class Ordinateur
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+    
+   
     /**
+    * @ORM\ManyToOne(targetEntity="Julien\ParcInformatiqueBundle\Entity\Salle")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $salle;
+    
+    /**
+    * @ORM\ManyToOne(targetEntity="Julien\ParcInformatiqueBundle\Entity\ReferenceModele")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $reference;
+    
+       
+    /**
+    * @ORM\ManyToMany(targetEntity="Julien\ParcInformatiqueBundle\Entity\OS")
+    */
+    private $os;
+    
+    /**
+    * @ORM\ManyToMany(targetEntity="Julien\ParcInformatiqueBundle\Entity\Package", cascade={"persist"})
+    */
+   private $package;
+    
+   /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="marque", type="string", length=255)
-     */
-    private $marque;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="reference", type="string", length=255)
-     */
-    private $reference;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="os", type="string", length=255)
-     */
-    private $os;
-
-    /**
-     * @var array
-     *
-     * @ORM\Column(name="logiciels", type="array")
-     */
-    private $logiciels;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="lastFormatage", type="date")
-     */
-    private $lastFormatage;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="lastMaj", type="date")
-     */
-    private $lastMaj;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="salle", type="string", length=255)
-     */
-    private $salle;
-
 
     /**
      * Get id
@@ -111,151 +85,15 @@ class Ordinateur
         return $this->name;
     }
 
-    /**
-     * Set marque
-     *
-     * @param string $marque
-     * @return Ordinateur
-     */
-    public function setMarque($marque)
-    {
-        $this->marque = $marque;
     
-        return $this;
-    }
-
-    /**
-     * Get marque
-     *
-     * @return string 
-     */
-    public function getMarque()
-    {
-        return $this->marque;
-    }
-
-    /**
-     * Set reference
-     *
-     * @param string $reference
-     * @return Ordinateur
-     */
-    public function setReference($reference)
-    {
-        $this->reference = $reference;
-    
-        return $this;
-    }
-
-    /**
-     * Get reference
-     *
-     * @return string 
-     */
-    public function getReference()
-    {
-        return $this->reference;
-    }
-
-    /**
-     * Set os
-     *
-     * @param string $os
-     * @return Ordinateur
-     */
-    public function setOs($os)
-    {
-        $this->os = $os;
-    
-        return $this;
-    }
-
-    /**
-     * Get os
-     *
-     * @return string 
-     */
-    public function getOs()
-    {
-        return $this->os;
-    }
-
-    /**
-     * Set logiciels
-     *
-     * @param array $logiciels
-     * @return Ordinateur
-     */
-    public function setLogiciels($logiciels)
-    {
-        $this->logiciels = $logiciels;
-    
-        return $this;
-    }
-
-    /**
-     * Get logiciels
-     *
-     * @return array 
-     */
-    public function getLogiciels()
-    {
-        return $this->logiciels;
-    }
-
-    /**
-     * Set lastFormatage
-     *
-     * @param \DateTime $lastFormatage
-     * @return Ordinateur
-     */
-    public function setLastFormatage($lastFormatage)
-    {
-        $this->lastFormatage = $lastFormatage;
-    
-        return $this;
-    }
-
-    /**
-     * Get lastFormatage
-     *
-     * @return \DateTime 
-     */
-    public function getLastFormatage()
-    {
-        return $this->lastFormatage;
-    }
-
-    /**
-     * Set lastMaj
-     *
-     * @param \DateTime $lastMaj
-     * @return Ordinateur
-     */
-    public function setLastMaj($lastMaj)
-    {
-        $this->lastMaj = $lastMaj;
-    
-        return $this;
-    }
-
-    /**
-     * Get lastMaj
-     *
-     * @return \DateTime 
-     */
-    public function getLastMaj()
-    {
-        return $this->lastMaj;
-    }
 
     /**
      * Set salle
      *
-     * @param string $salle
+     * @param \Julien\ParcInformatiqueBundle\Entity\Salle $salle
      * @return Ordinateur
      */
-    public function setSalle($salle)
+    public function setSalle(\Julien\ParcInformatiqueBundle\Entity\Salle $salle)
     {
         $this->salle = $salle;
     
@@ -265,10 +103,125 @@ class Ordinateur
     /**
      * Get salle
      *
-     * @return string 
+     * @return \Julien\ParcInformatiqueBundle\Entity\Salle 
      */
     public function getSalle()
     {
         return $this->salle;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->os = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->logiciel = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+   
+
+    /**
+     * Set os
+     *
+     * @param \Julien\ParcInformatiqueBundle\Entity\OS $os
+     * @return Ordinateur
+     */
+    public function setOs(\Julien\ParcInformatiqueBundle\Entity\OS $os)
+    {
+        $this->os = $os;
+    
+        return $this;
+    }
+
+    /**
+     * Get os
+     *
+     * @return \Julien\ParcInformatiqueBundle\Entity\OS 
+     */
+    public function getOs()
+    {
+        return $this->os;
+    }
+
+    /**
+     * Add os
+     *
+     * @param \Julien\ParcInformatiqueBundle\Entity\OS $os
+     * @return Ordinateur
+     */
+    public function addOs(\Julien\ParcInformatiqueBundle\Entity\OS $os)
+    {
+        $this->os[] = $os;
+    
+        return $this;
+    }
+
+  
+    /**
+     * Remove os
+     *
+     * @param \Julien\ParcInformatiqueBundle\Entity\OS $os
+     */
+    public function removeOs(\Julien\ParcInformatiqueBundle\Entity\OS $os)
+    {
+        $this->os->removeElement($os);
+    }
+
+    /**
+     * Add package
+     *
+     * @param \Julien\ParcInformatiqueBundle\Entity\Package $package
+     * @return Ordinateur
+     */
+    public function addPackage(\Julien\ParcInformatiqueBundle\Entity\Package $package)
+    {
+        $this->package[] = $package;
+    
+        return $this;
+    }
+
+    /**
+     * Remove package
+     *
+     * @param \Julien\ParcInformatiqueBundle\Entity\Package $package
+     */
+    public function removePackage(\Julien\ParcInformatiqueBundle\Entity\Package $package)
+    {
+        $this->package->removeElement($package);
+    }
+
+    /**
+     * Get package
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPackage()
+    {
+        return $this->package;
+    }
+
+    /**
+     * Set reference
+     *
+     * @param \Julien\ParcInformatiqueBundle\Entity\ReferenceModele $reference
+     * @return Ordinateur
+     */
+    public function setReference(\Julien\ParcInformatiqueBundle\Entity\ReferenceModele $reference)
+    {
+        $this->reference = $reference;
+    
+        return $this;
+    }
+
+    /**
+     * Get reference
+     *
+     * @return \Julien\ParcInformatiqueBundle\Entity\ReferenceModele 
+     */
+    public function getReference()
+    {
+        return $this->reference;
+    }
+
+    
 }

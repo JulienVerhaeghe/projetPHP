@@ -1,9 +1,27 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Lecture de l'article {{ id }}</title>
-  </head>
-  <body>
-    <h1>Hello Article n°{{ id }} !</h1>
-  </body>
-</html>
+{% extends "JulienParcInformatiqueBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Lecture d'une salle - {{ parent() }}
+{% endblock %}
+ 
+{% block sdzblog_body %}
+ 
+  {# Ici, on inclut la vue #}
+  {% include "JulienParcInformatiqueBundle:parcInfo:salle.html.twig" %}
+ 
+  <p>
+    <a href="{{ path('parcInfo_voir_liste_salle') }}" class="btn">
+      <i class="icon-chevron-left"></i>
+      Retour à la liste
+    </a>
+    <a href="{{ path('parcInfo_modifier_salle', {'id': salle.id}) }}" class="btn">
+      <i class="icon-edit"></i>
+      Modifier la salle
+    </a>
+    <a href="{{ path('parcInfo_supprimer_salle', {'id': salle.id}) }}" class="btn">
+      <i class="icon-trash"></i>
+      Supprimer la salle
+    </a>
+  </p>
+ 
+{% endblock %}

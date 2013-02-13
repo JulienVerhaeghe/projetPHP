@@ -20,14 +20,20 @@ class Salle
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+    
     /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
      */
     private $nom;
-
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=255)
+     */
+    private $description;
     /**
      * @var string
      *
@@ -35,14 +41,7 @@ class Salle
      */
     private $localisation;
 
-    /**
-     * @var array
-     *
-     * @ORM\Column(name="listeOrdinateur", type="array")
-     */
-    private $listeOrdinateur;
-
-
+  
     /**
      * Get id
      *
@@ -99,26 +98,30 @@ class Salle
         return $this->localisation;
     }
 
+    
+
+    
+
     /**
-     * Set listeOrdinateur
+     * Set description
      *
-     * @param array $listeOrdinateur
+     * @param string $description
      * @return Salle
      */
-    public function setListeOrdinateur($listeOrdinateur)
+    public function setDescription($description)
     {
-        $this->listeOrdinateur = $listeOrdinateur;
+        $this->description = $description;
     
         return $this;
     }
 
     /**
-     * Get listeOrdinateur
+     * Get description
      *
-     * @return array 
+     * @return string 
      */
-    public function getListeOrdinateur()
+    public function getDescription()
     {
-        return $this->listeOrdinateur;
+        return $this->description;
     }
 }
