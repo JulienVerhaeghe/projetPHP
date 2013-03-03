@@ -12,7 +12,7 @@ class __TwigTemplate_16265b4d26bdd2833d387a2d6b2b884a extends Twig_Template
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'body' => array($this, 'block_body'),
-            'sdzblog_body' => array($this, 'block_sdzblog_body'),
+            'parcInfo_body' => array($this, 'block_parcInfo_body'),
         );
     }
 
@@ -45,14 +45,14 @@ class __TwigTemplate_16265b4d26bdd2833d387a2d6b2b884a extends Twig_Template
   ";
         // line 11
         echo "  ";
-        $this->displayBlock('sdzblog_body', $context, $blocks);
+        $this->displayBlock('parcInfo_body', $context, $blocks);
         // line 13
         echo " 
 ";
     }
 
     // line 11
-    public function block_sdzblog_body($context, array $blocks = array())
+    public function block_parcInfo_body($context, array $blocks = array())
     {
         // line 12
         echo "  ";
@@ -70,6 +70,6 @@ class __TwigTemplate_16265b4d26bdd2833d387a2d6b2b884a extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  58 => 12,  55 => 11,  50 => 13,  43 => 8,  40 => 7,  33 => 4,  30 => 3,  47 => 11,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
+        return array (  58 => 12,  55 => 11,  50 => 13,  47 => 11,  43 => 8,  40 => 7,  33 => 4,  30 => 3,  73 => 19,  66 => 17,  56 => 14,  53 => 13,  48 => 12,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
     }
 }

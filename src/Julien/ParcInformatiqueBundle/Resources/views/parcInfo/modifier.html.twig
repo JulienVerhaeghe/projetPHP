@@ -6,7 +6,7 @@
   Modifier un article - {{ parent() }}
 {% endblock %}
  
-{% block sdzblog_body %}
+{% block parcInfo_body %}
  
   <h2>Modifier un article</h2>
  
@@ -20,7 +20,7 @@
   </p>
  
   <p>
-    <a href="{{ path('sdzblog_voir', {'id': article.id}) }}" class="btn">
+    <a href="{{ path('parcInfo_voir', {'id': article.id}) }}" class="btn">
       <i class="icon-chevron-left"></i>
       Retour à l'article
     </a>

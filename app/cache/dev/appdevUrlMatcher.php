@@ -115,7 +115,7 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         // parcInfo_voir_salle
         if (0 === strpos($pathinfo, '/salle') && preg_match('#^/salle/(?P<id>[^/]+)$#s', $pathinfo, $matches)) {
-            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\ParcInfoController::voir_salleAction',)), array('_route' => 'parcInfo_voir_salle'));
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'JulienParcInformatiqueBundle:Salle:voir',)), array('_route' => 'parcInfo_voir_salle'));
         }
 
         // parcInfo_voir_reference

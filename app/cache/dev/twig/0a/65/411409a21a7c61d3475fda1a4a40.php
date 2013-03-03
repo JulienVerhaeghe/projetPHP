@@ -11,7 +11,8 @@ class __TwigTemplate_0a65411409a21a7c61d3475fda1a4a40 extends Twig_Template
 
         $this->blocks = array(
             'title' => array($this, 'block_title'),
-            'sdzblog_body' => array($this, 'block_sdzblog_body'),
+            'parcInfo_body' => array($this, 'block_parcInfo_body'),
+            'javascripts' => array($this, 'block_javascripts'),
         );
     }
 
@@ -36,42 +37,120 @@ class __TwigTemplate_0a65411409a21a7c61d3475fda1a4a40 extends Twig_Template
     }
 
     // line 7
-    public function block_sdzblog_body($context, array $blocks = array())
+    public function block_parcInfo_body($context, array $blocks = array())
     {
         // line 8
-        echo " 
-  <h2>Liste des salles</h2>
+        echo "<div id=\"menu\">
+  <div class=\"row\" id='row1'>
+    <ul class=\"nav\">
+      <li><a href=\"#salle\">Salles</a></li>
+      <li><a href=\"#ordi\">Ordinateurs</a></li>
+      <li><a href=\"#package\">Packages</a></li>
+      <li><a href=\"#OS\">OS</a></li>
+      <li><a href=\"#peripherique\">Périphérique</a></li>
+      <li><a href=\"#logiciel\">Logiciel</a></li>
+    </ul>
+  </div>
+  <div class=\"row\" id='row2'>
+        
+  </div>
+          
+</div>
+  <div class=\"contextMenu\" id=\"salle\">
+      <ul>
+          <li><a href=\"";
+        // line 26
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_voir_liste_salle"), "html", null, true);
+        echo "\">Lister salle</a></li>
+          <li><a href=\"";
+        // line 27
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_salle"), "html", null, true);
+        echo "\">Ajouter salle</a></li>
+      </ul>
+  </div>
+  <div class=\"contextMenu\" id=\"ordi\">
+      <ul>
+          <li><a href=\"";
+        // line 32
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_ordi"), "html", null, true);
+        echo "\">Ajouter Ordinateur</a></li>
+          <li><a href=\"";
+        // line 33
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_voir_liste_ordi"), "html", null, true);
+        echo "\">Lister Ordinateur</a></li>
+      </ul>
+  </div>
+  <div class=\"contextMenu\" id=\"package\">
+      <ul>
+           <li><a href=\"";
+        // line 38
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_package"), "html", null, true);
+        echo "\">Ajouter Package</a></li>
+          <li><a href=\"";
+        // line 39
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_voir_liste_package"), "html", null, true);
+        echo "\">Lister Package</a></li>
+      </ul>
+  </div>
+  <div class=\"contextMenu\" id=\"OS\">
+      <ul>
+          <li><a href=\"";
+        // line 44
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_OS"), "html", null, true);
+        echo "\">Ajouter OS</a></li>
+          
+      </ul>
+  </div>
+  <div class=\"contextMenu\" id=\"logiciel\">
+      <ul>
+         
+          <li><a href=\"";
+        // line 51
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_salle"), "html", null, true);
+        echo "\">Ajouter une salle</a></li>
+      </ul>
+  </div>
+  <div class=\"contextMenu\" id=\"peripherique\">
+      <ul>
+          <li><a href=\"";
+        // line 56
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_OS"), "html", null, true);
+        echo "\">OS</a></li>
+          <li><a href=\"";
+        // line 57
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_salle"), "html", null, true);
+        echo "\">Ajouter une salle</a></li>
+      </ul>
+  </div>
+  
+  ";
+    }
+
+    // line 62
+    public function block_javascripts($context, array $blocks = array())
+    {
+        // line 63
+        echo "
+<script src=\"http://code.jquery.com/jquery-1.8.2.min.js\"></script>
  
-  <ul>
-    ";
-        // line 12
-        $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getContext($context, "salles"));
-        $context['_iterated'] = false;
-        foreach ($context['_seq'] as $context["_key"] => $context["salle"]) {
-            // line 13
-            echo "      <li>
-        <a href=\"";
-            // line 14
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_voir_salle", array("id" => $this->getAttribute($this->getContext($context, "salle"), "id"))), "html", null, true);
-            echo "\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "salle"), "nom"), "html", null, true);
-            echo "</a>
-      </li>
-    ";
-            $context['_iterated'] = true;
-        }
-        if (!$context['_iterated']) {
-            // line 17
-            echo "      <li>Pas (encore !) d'salles</li>
-    ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['salle'], $context['_parent'], $context['loop']);
-        $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 19
-        echo "  </ul>
- 
+<script type=\"text/javascript\">
+    \$(function() {
+     
+     \$('.nav').on('click','a', function(event){
+\t\tevent.preventDefault();
+\t\tvar \$this = \$(this);
+\t\t
+\t\tshowContextMenu(\$this.attr(\"href\"));
+\t});
+    });
+    showContextMenu = function(whatToShow){
+        var contenu = \$(whatToShow);
+        console.log(contenu);
+        \$('#row2').html(contenu.html())
+           
+    }
+</script>
+
 ";
     }
 
@@ -87,6 +166,6 @@ class __TwigTemplate_0a65411409a21a7c61d3475fda1a4a40 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  73 => 19,  66 => 17,  56 => 14,  53 => 13,  48 => 12,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
+        return array (  133 => 63,  130 => 62,  121 => 57,  117 => 56,  109 => 51,  99 => 44,  91 => 39,  87 => 38,  79 => 33,  75 => 32,  67 => 27,  63 => 26,  43 => 8,  40 => 7,  33 => 4,  30 => 3,);
     }
 }

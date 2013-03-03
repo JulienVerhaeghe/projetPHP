@@ -3,42 +3,28 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
  
-    <title>{% block title %}Sdz{% endblock %}</title>
+    <title>{% block title %}Gestion Parc{% endblock %}</title>
  
     {% block stylesheets %}
-      <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" />
+      <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" />
     {% endblock %}
   </head>
  
   <body>
     <div class="container">
-      <div id="header" class="hero-unit">
-        <h1>Gestion de parc informatique</h1>
-       
+      <div id="header">
+          <h1><a href="{{ path('parcInfo_accueil') }}">+ Parc informatique</a></h1>
       </div>
  
-      <div class="row">
-        <div id="menu" class="span3">
-          <h3>Menu</h3>
-          <ul class="nav nav-pills nav-stacked">
-            <li><a href="{{ path('parcInfo_accueil') }}">Accueil</a></li>
-            <li><a href="{{ path('parcInfo_voir_liste_salle') }}">Liste des salles</a></li>
-            <li><a href="{{ path('parcInfo_voir_liste_ordi') }}">Liste des ordinateurs</a></li>
-            <li><a href="{{ path('parcInfo_voir_liste_package') }}">Liste des packages</a></li>
-            <li><a href="{{ path('parcInfo_ajouter_salle') }}">Ajouter une salle</a></li>
-            <li><a href="{{ path('parcInfo_ajouter_ordi') }}">Ajouter un ordi</a></li>
-            <li><a href="{{ path('parcInfo_ajouter_package') }}">Ajouter un package</a></li>
-            <li><a href="{{ path('parcInfo_ajouter_OS') }}">Ajouter un OS</a></li>
-            
-          </ul>
-        </div>
-        <div id="content" class="span9">
+      <div>
+        
+        <div id="content" >
           {% block body %}
           {% endblock %}
         </div>
       </div>
  
-      <hr>
+      <hr class='break'>
  
       <footer>
         <p>Projet réalisé dans le cadre d'un projet Gobelins CRM.</p>
@@ -46,9 +32,9 @@
     </div>
  
   {% block javascripts %}
-    {# Ajoutez ces javascripts si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
+   
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
+     
   {% endblock %}
  
   </body>

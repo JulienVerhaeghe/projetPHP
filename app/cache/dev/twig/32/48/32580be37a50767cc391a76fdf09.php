@@ -38,59 +38,24 @@ class __TwigTemplate_324832580be37a50767cc391a76fdf09 extends Twig_Template
  
   <body>
     <div class=\"container\">
-      <div id=\"header\" class=\"hero-unit\">
-        <h1>Gestion de parc informatique</h1>
-       
+      <div id=\"header\">
+          <h1><a href=\"";
+        // line 16
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_accueil"), "html", null, true);
+        echo "\">+ Parc informatique</a></h1>
       </div>
  
-      <div class=\"row\">
-        <div id=\"menu\" class=\"span3\">
-          <h3>Menu</h3>
-          <ul class=\"nav nav-pills nav-stacked\">
-            <li><a href=\"";
-        // line 24
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_accueil"), "html", null, true);
-        echo "\">Accueil</a></li>
-            <li><a href=\"";
-        // line 25
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_voir_liste_salle"), "html", null, true);
-        echo "\">Liste des salles</a></li>
-            <li><a href=\"";
-        // line 26
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_voir_liste_ordi"), "html", null, true);
-        echo "\">Liste des ordinateurs</a></li>
-            <li><a href=\"";
-        // line 27
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_voir_liste_package"), "html", null, true);
-        echo "\">Liste des packages</a></li>
-            <li><a href=\"";
-        // line 28
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_salle"), "html", null, true);
-        echo "\">Ajouter une salle</a></li>
-            <li><a href=\"";
-        // line 29
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_ordi"), "html", null, true);
-        echo "\">Ajouter un ordi</a></li>
-            <li><a href=\"";
-        // line 30
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_package"), "html", null, true);
-        echo "\">Ajouter un package</a></li>
-            <li><a href=\"";
-        // line 31
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_OS"), "html", null, true);
-        echo "\">Ajouter un OS</a></li>
-            
-          </ul>
-        </div>
-        <div id=\"content\" class=\"span9\">
+      <div>
+        
+        <div id=\"content\" >
           ";
-        // line 36
+        // line 22
         $this->displayBlock('body', $context, $blocks);
-        // line 38
+        // line 24
         echo "        </div>
       </div>
  
-      <hr>
+      <hr class='break'>
  
       <footer>
         <p>Projet réalisé dans le cadre d'un projet Gobelins CRM.</p>
@@ -98,9 +63,9 @@ class __TwigTemplate_324832580be37a50767cc391a76fdf09 extends Twig_Template
     </div>
  
   ";
-        // line 48
+        // line 34
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 53
+        // line 39
         echo " 
   </body>
 </html>";
@@ -109,7 +74,7 @@ class __TwigTemplate_324832580be37a50767cc391a76fdf09 extends Twig_Template
     // line 6
     public function block_title($context, array $blocks = array())
     {
-        echo "Sdz";
+        echo "Gestion Parc";
     }
 
     // line 8
@@ -117,29 +82,25 @@ class __TwigTemplate_324832580be37a50767cc391a76fdf09 extends Twig_Template
     {
         // line 9
         echo "      <link rel=\"stylesheet\" href=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/bootstrap.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/style.css"), "html", null, true);
         echo "\" type=\"text/css\" />
     ";
     }
 
-    // line 36
+    // line 22
     public function block_body($context, array $blocks = array())
     {
-        // line 37
+        // line 23
         echo "          ";
     }
 
-    // line 48
+    // line 34
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 49
-        echo "    ";
-        // line 50
-        echo "    <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js\"></script>
-    <script type=\"text/javascript\" src=\"";
-        // line 51
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/bootstrap.js"), "html", null, true);
-        echo "\"></script>
+        // line 35
+        echo "   
+    <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js\"></script>
+     
   ";
     }
 
@@ -155,6 +116,6 @@ class __TwigTemplate_324832580be37a50767cc391a76fdf09 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  141 => 51,  138 => 50,  136 => 49,  133 => 48,  129 => 37,  126 => 36,  119 => 9,  116 => 8,  110 => 6,  104 => 53,  102 => 48,  90 => 38,  88 => 36,  80 => 31,  76 => 30,  72 => 29,  68 => 28,  64 => 27,  60 => 26,  56 => 25,  52 => 24,  37 => 11,  35 => 8,  23 => 1,  58 => 12,  55 => 11,  50 => 13,  43 => 8,  40 => 7,  33 => 4,  30 => 6,  47 => 11,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
+        return array (  101 => 35,  98 => 34,  94 => 23,  91 => 22,  84 => 9,  81 => 8,  75 => 6,  69 => 39,  67 => 34,  55 => 24,  53 => 22,  44 => 16,  37 => 11,  35 => 8,  30 => 6,  23 => 1,);
     }
 }

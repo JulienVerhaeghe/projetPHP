@@ -11,7 +11,7 @@ class __TwigTemplate_9dfe057274c126561ce2ca7ad2534b54 extends Twig_Template
 
         $this->blocks = array(
             'title' => array($this, 'block_title'),
-            'sdzblog_body' => array($this, 'block_sdzblog_body'),
+            'parcInfo_body' => array($this, 'block_parcInfo_body'),
         );
     }
 
@@ -36,7 +36,7 @@ class __TwigTemplate_9dfe057274c126561ce2ca7ad2534b54 extends Twig_Template
     }
 
     // line 7
-    public function block_sdzblog_body($context, array $blocks = array())
+    public function block_parcInfo_body($context, array $blocks = array())
     {
         // line 8
         echo " 

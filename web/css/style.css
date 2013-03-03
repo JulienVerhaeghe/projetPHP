@@ -1,0 +1,35 @@
+.container{
+    min-width: 300px;
+    max-width: 960px;
+    margin: 0 auto;
+    font-family: helvetica,arial,sans-serif;
+   
+}
+
+#header a{
+    color: #c67605;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.contextMenu{
+  display: none;
+}
+.row{
+    float: left;
+}
+.break{
+    clear: both;
+}
+li a{
+    text-decoration: none;
+    color: black;
+   border : 1px solid #c67605;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+    display: block;
+    width: 100px;
+}
+li {
+   list-style: none;
+}

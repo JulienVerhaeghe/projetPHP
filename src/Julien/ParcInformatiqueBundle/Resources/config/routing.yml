@@ -4,15 +4,15 @@ parcInfo_accueil:
 #------------------------ voir entité
 parcInfo_voir_salle:
     pattern:   /salle/{id}
-    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:voir_salle }
+    defaults:  { _controller: JulienParcInformatiqueBundle:Salle:voir }
 
 parcInfo_voir_reference:
     pattern:   /reference/{id}
-    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:voir_reference }
+    defaults:  { _controller: JulienParcInformatiqueBundle:Reference:voir }
  
 parcInfo_voir_ordi:
     pattern:   /ordi/{id}
-    defaults:  { _controller: JulienParcInformatiqueBundle:ParcInfo:voir_ordi}
+    defaults:  { _controller: JulienParcInformatiqueBundle:Ordi:voir}
     
 parcInfo_voir_package:
     pattern:   /package/{id}
