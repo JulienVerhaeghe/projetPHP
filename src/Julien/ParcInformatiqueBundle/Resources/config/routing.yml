@@ -29,7 +29,19 @@ parcInfo_voir_liste_salle:
 parcInfo_voir_liste_ordi:
     pattern:   /listeOrdi/
     defaults:  { _controller: JulienParcInformatiqueBundle:Ordi:voirListe }
-    
+
+parcInfo_voir_liste_os:
+    pattern:   /listeOS/
+    defaults:  { _controller: JulienParcInformatiqueBundle:OS:voirListe }
+
+parcInfo_voir_liste_logiciel:
+    pattern:   /listeOS/
+    defaults:  { _controller: JulienParcInformatiqueBundle:Logiciel:voirListe }
+
+parcInfo_voir_liste_peripherique:
+    pattern:   /listePeripherique/
+    defaults:  { _controller: JulienParcInformatiqueBundle:Peripherique:voirListe }
+
 parcInfo_voir_liste_package:
     pattern:   /listepackage/
     defaults:  { _controller: JulienParcInformatiqueBundle:Package:voirListe }
@@ -50,9 +62,17 @@ parcInfo_ajouter_package:
     pattern:   /ajouter_package
     defaults:  { _controller: JulienParcInformatiqueBundle:Package:ajouter}
 
+parcInfo_ajouter_logiciel:
+    pattern:   /ajouter_logiciel
+    defaults:  { _controller: JulienParcInformatiqueBundle:Logiciel:ajouter}
+
 parcInfo_ajouter_OS:
     pattern:   /ajouter_OS
     defaults:  { _controller: JulienParcInformatiqueBundle:OS:ajouter}
+    
+parcInfo_ajouter_peripherique:
+    pattern:   /ajouter_peripherique
+    defaults:  { _controller: JulienParcInformatiqueBundle:Peripherique:ajouter}
 #------------------------ modifier entité    
 parcInfo_modifier_salle:
     pattern:   /modifier_salle/{id}

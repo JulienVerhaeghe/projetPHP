@@ -13,7 +13,11 @@
 namespace Julien\ParcInformatiqueBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Julien\ParcInformatiqueBundle\Controller\ControleurStrategy;
-class OSController extends Controller implements ControleurStrategy {
+
+use Julien\ParcInformatiqueBundle\Entity\Ordinateur;
+use Julien\ParcInformatiqueBundle\Form\OrdinateurType;
+
+class OrdiController extends Controller implements ControleurStrategy {
     public function supprimerAction($id) {
          // On récupère l'EntityManager
       $em = $this->getDoctrine()

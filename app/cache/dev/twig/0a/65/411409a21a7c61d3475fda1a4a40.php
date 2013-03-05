@@ -72,12 +72,12 @@ class __TwigTemplate_0a65411409a21a7c61d3475fda1a4a40 extends Twig_Template
       <ul>
           <li><a href=\"";
         // line 32
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_ordi"), "html", null, true);
-        echo "\">Ajouter Ordinateur</a></li>
-          <li><a href=\"";
-        // line 33
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_voir_liste_ordi"), "html", null, true);
         echo "\">Lister Ordinateur</a></li>
+          <li><a href=\"";
+        // line 33
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_ordi"), "html", null, true);
+        echo "\">Ajouter Ordinateur</a></li>
       </ul>
   </div>
   <div class=\"contextMenu\" id=\"package\">
@@ -98,28 +98,34 @@ class __TwigTemplate_0a65411409a21a7c61d3475fda1a4a40 extends Twig_Template
         // line 44
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_OS"), "html", null, true);
         echo "\">Ajouter OS</a></li>
-          
+          <li><a href=\"";
+        // line 45
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_voir_liste_os"), "html", null, true);
+        echo "\">Lister OS</a></li>
       </ul>
   </div>
   <div class=\"contextMenu\" id=\"logiciel\">
       <ul>
-         
+         <li><a href=\"";
+        // line 50
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_logiciel"), "html", null, true);
+        echo "\">Ajouter un Logiciel</a></li>
           <li><a href=\"";
         // line 51
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_salle"), "html", null, true);
-        echo "\">Ajouter une salle</a></li>
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_voir_liste_logiciel"), "html", null, true);
+        echo "\">Lister Logiciel</a></li>
       </ul>
   </div>
   <div class=\"contextMenu\" id=\"peripherique\">
       <ul>
           <li><a href=\"";
         // line 56
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_OS"), "html", null, true);
-        echo "\">OS</a></li>
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_peripherique"), "html", null, true);
+        echo "\">Ajouter un périphérique</a></li>
           <li><a href=\"";
         // line 57
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_salle"), "html", null, true);
-        echo "\">Ajouter une salle</a></li>
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_voir_liste_peripherique"), "html", null, true);
+        echo "\">Lister périphérique</a></li>
       </ul>
   </div>
   
@@ -166,6 +172,6 @@ class __TwigTemplate_0a65411409a21a7c61d3475fda1a4a40 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  133 => 63,  130 => 62,  121 => 57,  117 => 56,  109 => 51,  99 => 44,  91 => 39,  87 => 38,  79 => 33,  75 => 32,  67 => 27,  63 => 26,  43 => 8,  40 => 7,  33 => 4,  30 => 3,);
+        return array (  139 => 63,  136 => 62,  127 => 57,  123 => 56,  115 => 51,  111 => 50,  103 => 45,  99 => 44,  91 => 39,  87 => 38,  79 => 33,  75 => 32,  67 => 27,  63 => 26,  43 => 8,  40 => 7,  33 => 4,  30 => 3,);
     }
 }

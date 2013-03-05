@@ -13,6 +13,9 @@
 namespace Julien\ParcInformatiqueBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Julien\ParcInformatiqueBundle\Controller\ControleurStrategy;
+/*formulaire destiné à ajouter et modifier une salle*/
+use Julien\ParcInformatiqueBundle\Entity\Salle;
+use Julien\ParcInformatiqueBundle\Form\SalleType;
 class SalleController extends Controller implements ControleurStrategy  {
     
     public function voirAction($id){

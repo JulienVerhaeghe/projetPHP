@@ -13,7 +13,8 @@
 namespace Julien\ParcInformatiqueBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Julien\ParcInformatiqueBundle\Controller\ControleurStrategy;
-
+use Julien\ParcInformatiqueBundle\Form\ReferenceModeleType;
+use Julien\ParcInformatiqueBundle\Entity\ReferenceModele;
 class ReferenceController extends Controller implements ControleurStrategy {
      public function supprimerAction($id) {
         ;

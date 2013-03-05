@@ -13,6 +13,10 @@
 namespace Julien\ParcInformatiqueBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Julien\ParcInformatiqueBundle\Controller\ControleurStrategy;
+use Julien\ParcInformatiqueBundle\Entity\OS;
+use Julien\ParcInformatiqueBundle\Form\OSType;
+
+
 class OSController extends Controller implements ControleurStrategy {
     public function supprimerAction($id) {
         ;
