@@ -19,13 +19,44 @@ use Julien\ParcInformatiqueBundle\Form\OSType;
 
 class OSController extends Controller implements ControleurStrategy {
     public function supprimerAction($id) {
-        ;
+        // On récupère l'EntityManager
+      $em = $this->getDoctrine()
+                 ->getEntityManager();
+
+      // On récupère l'entité correspondant à l'id $id
+      $os = $em->getRepository('JulienParcInformatiqueBundle:OS')
+                    ->find($id);
+
+      // Si la salle n'existe pas, on affiche une erreur 404
+      if ($os == null) {
+        throw $this->createNotFoundException('OS [id='.$id.'] inexistante');
+      }
+
+      if ($this->get('request')->getMethod() == 'GET') {
+
+        $this->get('session')->getFlashBag()->add('info', 'OS bien supprimé');
+        $em->remove($os);
+        $em->flush();
+        return $this->render('JulienParcInformatiqueBundle:parcInfo:supprimer_os.html.twig', array(
+        'OS' => $os));
+      }
     }
     public function modifierAction($id) {
         ;
     }
     public function voirListeAction() {
-        ;
+         // On récupère l'EntityManager
+        $em = $this->getDoctrine()
+                   ->getEntityManager();
+        
+        // On récupère la liste des salles
+        $liste_os = $em->getRepository('JulienParcInformatiqueBundle:OS')
+                               ->findAll();
+        
+        // Puis modifiez la ligne du render comme ceci, pour prendre en compte l'article :
+        return $this->render('JulienParcInformatiqueBundle:parcInfo:voir_liste_os.html.twig', array(
+                'liste_os' => $liste_os
+        ));
     }
      public function voirAction($id){
         // On récupère l'EntityManager

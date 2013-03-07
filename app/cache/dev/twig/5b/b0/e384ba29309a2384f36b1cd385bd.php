@@ -11,7 +11,7 @@ class __TwigTemplate_5bb0e384ba29309a2384f36b1cd385bd extends Twig_Template
 
         $this->blocks = array(
             'title' => array($this, 'block_title'),
-            'parcInfo_body' => array($this, 'block_parcInfo_body'),
+            'parcInfo_content' => array($this, 'block_parcInfo_content'),
         );
     }
 
@@ -36,40 +36,41 @@ class __TwigTemplate_5bb0e384ba29309a2384f36b1cd385bd extends Twig_Template
     }
 
     // line 7
-    public function block_parcInfo_body($context, array $blocks = array())
+    public function block_parcInfo_content($context, array $blocks = array())
     {
         // line 8
-        echo " 
+        echo "  <div class=\"row\" id='row2'>
+ 
   ";
-        // line 10
+        // line 11
         echo "  ";
         $this->env->loadTemplate("JulienParcInformatiqueBundle:parcInfo:salle.html.twig")->display($context);
-        // line 11
+        // line 12
         echo " 
-  <p>
+      <p class=\"bottom\">
     <a href=\"";
-        // line 13
+        // line 14
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_voir_liste_salle"), "html", null, true);
         echo "\" class=\"btn\">
       <i class=\"icon-chevron-left\"></i>
       Retour à la liste
     </a>
     <a href=\"";
-        // line 17
+        // line 18
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_modifier_salle", array("id" => $this->getAttribute($this->getContext($context, "salle"), "id"))), "html", null, true);
         echo "\" class=\"btn\">
       <i class=\"icon-edit\"></i>
       Modifier la salle
     </a>
     <a href=\"";
-        // line 21
+        // line 22
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_supprimer_salle", array("id" => $this->getAttribute($this->getContext($context, "salle"), "id"))), "html", null, true);
         echo "\" class=\"btn\">
       <i class=\"icon-trash\"></i>
       Supprimer la salle
     </a>
   </p>
- 
+ </div>
 ";
     }
 
@@ -85,6 +86,6 @@ class __TwigTemplate_5bb0e384ba29309a2384f36b1cd385bd extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  66 => 21,  59 => 17,  52 => 13,  48 => 11,  45 => 10,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
+        return array (  67 => 22,  60 => 18,  53 => 14,  49 => 12,  46 => 11,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
     }
 }

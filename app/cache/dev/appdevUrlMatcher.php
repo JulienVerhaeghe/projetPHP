@@ -217,9 +217,9 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'JulienParcInformatiqueBundle:Logiciel:ajouter',  '_route' => 'parcInfo_ajouter_logiciel',);
         }
 
-        // parcInfo_ajouter_OS
+        // parcInfo_ajouter_os
         if ($pathinfo === '/ajouter_OS') {
-            return array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\OSController::ajouterAction',  '_route' => 'parcInfo_ajouter_OS',);
+            return array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\OSController::ajouterAction',  '_route' => 'parcInfo_ajouter_os',);
         }
 
         // parcInfo_ajouter_peripherique
@@ -255,6 +255,11 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // parcInfo_supprimer_ordi
         if (0 === strpos($pathinfo, '/supprimer_ordi') && preg_match('#^/supprimer_ordi/(?P<id>[^/]+)$#s', $pathinfo, $matches)) {
             return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\OrdiController::supprimerAction',)), array('_route' => 'parcInfo_supprimer_ordi'));
+        }
+
+        // parcInfo_supprimer_OS
+        if (0 === strpos($pathinfo, '/supprimer_os') && preg_match('#^/supprimer_os/(?P<id>[^/]+)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\OSController::supprimerAction',)), array('_route' => 'parcInfo_supprimer_OS'));
         }
 
         // parcInfo_supprimer_reference

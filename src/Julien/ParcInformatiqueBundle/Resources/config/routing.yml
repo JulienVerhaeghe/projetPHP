@@ -66,7 +66,7 @@ parcInfo_ajouter_logiciel:
     pattern:   /ajouter_logiciel
     defaults:  { _controller: JulienParcInformatiqueBundle:Logiciel:ajouter}
 
-parcInfo_ajouter_OS:
+parcInfo_ajouter_os:
     pattern:   /ajouter_OS
     defaults:  { _controller: JulienParcInformatiqueBundle:OS:ajouter}
     
@@ -97,6 +97,10 @@ parcInfo_supprimer_salle:
 parcInfo_supprimer_ordi:
     pattern:   /supprimer_ordi/{id}
     defaults:  { _controller: JulienParcInformatiqueBundle:Ordi:supprimer}
+
+parcInfo_supprimer_OS:
+    pattern:   /supprimer_os/{id}
+    defaults:  { _controller: JulienParcInformatiqueBundle:OS:supprimer}
 
 parcInfo_supprimer_reference:
     pattern:   /supprimer_reference/{id}

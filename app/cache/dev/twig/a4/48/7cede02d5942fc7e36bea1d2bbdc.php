@@ -11,7 +11,7 @@ class __TwigTemplate_a4487cede02d5942fc7e36bea1d2bbdc extends Twig_Template
 
         $this->blocks = array(
             'title' => array($this, 'block_title'),
-            'parcInfo_body' => array($this, 'block_parcInfo_body'),
+            'parcInfo_content' => array($this, 'block_parcInfo_content'),
         );
     }
 
@@ -36,10 +36,10 @@ class __TwigTemplate_a4487cede02d5942fc7e36bea1d2bbdc extends Twig_Template
     }
 
     // line 7
-    public function block_parcInfo_body($context, array $blocks = array())
+    public function block_parcInfo_content($context, array $blocks = array())
     {
         // line 8
-        echo " 
+        echo " <div class=\"row\" id='row2'>
   <h2>Suprimer  ";
         // line 9
         echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "salle"), "nom"), "html", null, true);
@@ -49,7 +49,7 @@ class __TwigTemplate_a4487cede02d5942fc7e36bea1d2bbdc extends Twig_Template
     La salle vient d'être supprimé
   </p>
  
- 
+ </div>
  
 ";
     }

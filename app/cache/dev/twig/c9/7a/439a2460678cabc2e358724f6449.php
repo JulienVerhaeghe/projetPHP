@@ -11,7 +11,7 @@ class __TwigTemplate_c97a439a2460678cabc2e358724f6449 extends Twig_Template
 
         $this->blocks = array(
             'title' => array($this, 'block_title'),
-            'parcInfo_body' => array($this, 'block_parcInfo_body'),
+            'parcInfo_content' => array($this, 'block_parcInfo_content'),
         );
     }
 
@@ -36,10 +36,10 @@ class __TwigTemplate_c97a439a2460678cabc2e358724f6449 extends Twig_Template
     }
 
     // line 7
-    public function block_parcInfo_body($context, array $blocks = array())
+    public function block_parcInfo_content($context, array $blocks = array())
     {
         // line 8
-        echo " 
+        echo " <div class=\"row\" id='row2'>
   <h2>liste des Ordinateurs</h2>
   
   <ul>
@@ -60,7 +60,7 @@ class __TwigTemplate_c97a439a2460678cabc2e358724f6449 extends Twig_Template
         }
         if (!$context['_iterated']) {
             // line 15
-            echo "    <li>Pas d'utilisateur trouvé.</li>
+            echo "    <li>Pas d'ordinateur trouvé.</li>
   ";
         }
         $_parent = $context['_parent'];
@@ -68,10 +68,13 @@ class __TwigTemplate_c97a439a2460678cabc2e358724f6449 extends Twig_Template
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
         // line 17
         echo "</ul>
-   
+   <div class='bottom'><a href=\"";
+        // line 18
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_ordi"), "html", null, true);
+        echo "\">Ajouter ordinateur</a></div>
   
  
- 
+ </div>
 ";
     }
 
@@ -87,6 +90,6 @@ class __TwigTemplate_c97a439a2460678cabc2e358724f6449 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  70 => 17,  63 => 15,  53 => 13,  48 => 12,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
+        return array (  73 => 18,  70 => 17,  63 => 15,  53 => 13,  48 => 12,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
     }
 }

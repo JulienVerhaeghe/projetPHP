@@ -53,9 +53,11 @@ class SalleController extends Controller implements ControleurStrategy  {
                                ->findAll();
         
         // Puis modifiez la ligne du render comme ceci, pour prendre en compte l'article :
-        return $this->render('JulienParcInformatiqueBundle:parcInfo:voir_liste_salle.html.twig', array(
-                'liste_salle' => $liste_salle
+        return $this->render('JulienParcInformatiqueBundle:parcInfo:voir_liste_salle.html.twig',array(
+            'liste' => $liste_salle
         ));
+                
+        
     }
     
      public function ajouterAction()

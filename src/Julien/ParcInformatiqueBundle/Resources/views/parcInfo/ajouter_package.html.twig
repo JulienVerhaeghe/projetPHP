@@ -4,7 +4,8 @@
   Ajouter un article - {{ parent() }}
 {% endblock %}
  
-{% block parcInfo_body %}
+{% block parcInfo_content %}
+  <div class="row" id='row2'>
  
   <h2>Ajouter un package</h2>
  
@@ -60,13 +61,8 @@ $(document).ready(function() {
 });
 </script>
  
-  <p>
-    Vous éditez un article déjà existant,
-    ne le changez pas trop pour éviter
-    aux membres de ne pas comprendre
-    ce qu'il se passe.
-  </p>
- 
   
+ 
+  </div>
  
 {% endblock %}

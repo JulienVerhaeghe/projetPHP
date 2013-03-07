@@ -80,11 +80,11 @@ class OrdiController extends Controller implements ControleurStrategy {
         $em = $this->getDoctrine()
                    ->getEntityManager();
         
-        // On récupère la liste des salles
-        $liste_ordi = $em->getRepository('JulienParcInformatiqueBundle:Ordinateur')
+        // On récupère la liste des os
+        $liste_ordi = $em->getRepository('JulienParcInformatiqueBundle:OS')
                                ->findAll();
         
-        // Puis modifiez la ligne du render comme ceci, pour prendre en compte l'article :
+        
         return $this->render('JulienParcInformatiqueBundle:parcInfo:voir_liste_ordi.html.twig', array(
                 'liste_ordi' => $liste_ordi
         ));

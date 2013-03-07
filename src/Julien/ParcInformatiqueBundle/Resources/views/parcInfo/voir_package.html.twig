@@ -4,7 +4,8 @@
   Lecture d'une salle - {{ parent() }}
 {% endblock %}
  
-{% block parcInfo_body %}
+{% block parcInfo_content %}
+  <div class="row" id='row2'>
  
   <h2>
 
@@ -20,21 +21,21 @@
     {% endfor %}
   {% endif %}
 
- <p>
+      <p class="bottom">
     <a href="{{ path('parcInfo_voir_liste_package') }}" class="btn">
-      <i class="icon-chevron-left"></i>
+     
       Retour à la liste
     </a>
     <a href="{{ path('parcInfo_modifier_package', {'id': package.id}) }}" class="btn">
-      <i class="icon-edit"></i>
+     
       Modifier le package
     </a>
     <a href="{{ path('parcInfo_supprimer_package', {'id': package.id}) }}" class="btn">
-      <i class="icon-trash"></i>
+    
       Supprimer le package
     </a>
   </p>
     
- 
+ </div>
  
 {% endblock %}

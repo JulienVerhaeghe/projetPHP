@@ -11,7 +11,7 @@ class __TwigTemplate_eeadd568165767e895f889fee3d9a1b3 extends Twig_Template
 
         $this->blocks = array(
             'title' => array($this, 'block_title'),
-            'sdzblog_body' => array($this, 'block_sdzblog_body'),
+            'parcInfo_content' => array($this, 'block_parcInfo_content'),
         );
     }
 
@@ -36,24 +36,25 @@ class __TwigTemplate_eeadd568165767e895f889fee3d9a1b3 extends Twig_Template
     }
 
     // line 7
-    public function block_sdzblog_body($context, array $blocks = array())
+    public function block_parcInfo_content($context, array $blocks = array())
     {
         // line 8
-        echo " 
+        echo "  <div class=\"row\" id='row2'>
+ 
   <h2>Ajouter un package</h2>
  
   <div class=\"well\">
   <form method=\"post\" ";
-        // line 12
+        // line 13
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'enctype');
         echo ">
     ";
-        // line 13
+        // line 14
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'widget');
         echo "
  
     ";
-        // line 16
+        // line 17
         echo "    <a href=\"#\" id=\"add_category\" class=\"btn\">Ajouter une catégorie</a><br /><br />
  
     <input type=\"submit\" class=\"btn btn-primary\" />
@@ -101,14 +102,9 @@ class __TwigTemplate_eeadd568165767e895f889fee3d9a1b3 extends Twig_Template
 });
 </script>
  
-  <p>
-    Vous éditez un article déjà existant,
-    ne le changez pas trop pour éviter
-    aux membres de ne pas comprendre
-    ce qu'il se passe.
-  </p>
- 
   
+ 
+  </div>
  
 ";
     }
@@ -125,6 +121,6 @@ class __TwigTemplate_eeadd568165767e895f889fee3d9a1b3 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  57 => 16,  52 => 13,  48 => 12,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
+        return array (  58 => 17,  53 => 14,  49 => 13,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
     }
 }

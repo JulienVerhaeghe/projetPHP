@@ -10,8 +10,7 @@ class __TwigTemplate_6d48b7923a8aed9b1db2ea41637fb79c extends Twig_Template
         $this->parent = $this->env->loadTemplate("JulienParcInformatiqueBundle::layout.html.twig");
 
         $this->blocks = array(
-            'title' => array($this, 'block_title'),
-            'parcInfo_body' => array($this, 'block_parcInfo_body'),
+            'parcInfo_content' => array($this, 'block_parcInfo_content'),
         );
     }
 
@@ -26,52 +25,57 @@ class __TwigTemplate_6d48b7923a8aed9b1db2ea41637fb79c extends Twig_Template
     }
 
     // line 3
-    public function block_title($context, array $blocks = array())
+    public function block_parcInfo_content($context, array $blocks = array())
     {
         // line 4
-        echo "  Salle - ";
-        $this->displayParentBlock("title", $context, $blocks);
-        echo "
-";
-    }
-
-    // line 7
-    public function block_parcInfo_body($context, array $blocks = array())
-    {
-        // line 8
-        echo " 
-  <h2>liste des salles</h2>
+        echo "<div class=\"row\" id='row2'>
+<h2>liste des salles</h2>
   
   <ul>
   ";
-        // line 12
+        // line 8
         $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getContext($context, "liste_salle"));
+        $context['_seq'] = twig_ensure_traversable($this->getContext($context, "liste"));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["salle"]) {
-            // line 13
-            echo "          <li><a href=\"";
+            // line 9
+            echo "          <li><a id='produit' href=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_voir_salle", array("id" => $this->getAttribute($this->getContext($context, "salle"), "id"))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "salle"), "nom"), "html", null, true);
-            echo "</a></li>
+            echo "</a>
+                  
+                      <a href=\"";
+            // line 11
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_modifier_salle", array("id" => $this->getAttribute($this->getContext($context, "salle"), "id"))), "html", null, true);
+            echo "\" class=\"btn\">Modifier</a>
+                      <a href=\"";
+            // line 12
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_supprimer_salle", array("id" => $this->getAttribute($this->getContext($context, "salle"), "id"))), "html", null, true);
+            echo "\" class=\"btn\">Supprimer</a>
+                               
+    
+    
+     
+</li>
   ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 15
-            echo "    <li>Pas d'utilisateur trouvé.</li>
+            // line 19
+            echo "    <li>Aucune salle</li>
   ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['salle'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 17
+        // line 21
         echo "</ul>
-   
-  
- 
- 
+<div class='bottom'><a href=\"";
+        // line 22
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_salle"), "html", null, true);
+        echo "\">Ajouter salle</a></div>
+</div>
 ";
     }
 
@@ -87,6 +91,6 @@ class __TwigTemplate_6d48b7923a8aed9b1db2ea41637fb79c extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  70 => 17,  63 => 15,  53 => 13,  48 => 12,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
+        return array (  76 => 22,  73 => 21,  66 => 19,  54 => 12,  50 => 11,  42 => 9,  37 => 8,  31 => 4,  28 => 3,);
     }
 }

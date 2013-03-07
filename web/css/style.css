@@ -16,20 +16,49 @@
 }
 .row{
     float: left;
+    margin-right: 15px;
+}
+a.activate{
+    background-color: #c67605;
 }
 .break{
     clear: both;
 }
-li a{
+
+#row1 li a{
     text-decoration: none;
     color: black;
-   border : 1px solid #c67605;
+    border : 1px solid #c67605;
     padding: 5px;
     text-align: center;
     margin-bottom: 5px;
     display: block;
     width: 100px;
 }
+#row2 li{
+     border : 1px solid #c67605;
+}
+#row2 ul{
+    width: 500px;
+}
+#row2 li a{
+    text-decoration: none;
+    color: black;
+    
+    padding: 10px 20px 10px 20px;
+    display: inline-block;
+    
+}
+#row2 li a:hover{
+    background-color: #c67605;
+    
+}
+#row2 li a#produit{
+    text-transform: uppercase;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
 li {
    list-style: none;
 }

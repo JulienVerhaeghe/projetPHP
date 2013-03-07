@@ -11,7 +11,7 @@ class __TwigTemplate_9dfe057274c126561ce2ca7ad2534b54 extends Twig_Template
 
         $this->blocks = array(
             'title' => array($this, 'block_title'),
-            'parcInfo_body' => array($this, 'block_parcInfo_body'),
+            'parcInfo_content' => array($this, 'block_parcInfo_content'),
         );
     }
 
@@ -36,39 +36,50 @@ class __TwigTemplate_9dfe057274c126561ce2ca7ad2534b54 extends Twig_Template
     }
 
     // line 7
-    public function block_parcInfo_body($context, array $blocks = array())
+    public function block_parcInfo_content($context, array $blocks = array())
     {
         // line 8
-        echo " 
+        echo "  <div class=\"row\" id='row2'>
+ 
   <h2>liste des packages</h2>
   
   <ul>
   ";
-        // line 12
+        // line 13
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getContext($context, "liste_package"));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["package"]) {
-            // line 13
+            // line 14
             echo "          <li><a href=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_voir_package", array("id" => $this->getAttribute($this->getContext($context, "package"), "id"))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "package"), "name"), "html", null, true);
-            echo "</a></li>
+            echo "</a>  <a href=\"";
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_modifier_package", array("id" => $this->getAttribute($this->getContext($context, "package"), "id"))), "html", null, true);
+            echo "\" class=\"btn\">Modifier</a>
+                      <a href=\"";
+            // line 15
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_supprimer_package", array("id" => $this->getAttribute($this->getContext($context, "package"), "id"))), "html", null, true);
+            echo "\" class=\"btn\">Supprimer</a></li>
   ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 15
+            // line 17
             echo "    <li>Pas de package trouvé.</li>
   ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['package'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 17
+        // line 19
         echo "</ul>
-   
+  <div class='bottom'><a href=\"";
+        // line 20
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_ajouter_package"), "html", null, true);
+        echo "\">Ajouter package</a></div>
+   </div>
   
  
  
@@ -87,6 +98,6 @@ class __TwigTemplate_9dfe057274c126561ce2ca7ad2534b54 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  70 => 17,  63 => 15,  53 => 13,  48 => 12,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
+        return array (  80 => 20,  77 => 19,  70 => 17,  63 => 15,  54 => 14,  49 => 13,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
     }
 }

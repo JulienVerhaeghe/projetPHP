@@ -11,7 +11,7 @@ class __TwigTemplate_db59770f42d6f645e4a3a5300b94be98 extends Twig_Template
 
         $this->blocks = array(
             'title' => array($this, 'block_title'),
-            'parcInfo_body' => array($this, 'block_parcInfo_body'),
+            'parcInfo_content' => array($this, 'block_parcInfo_content'),
         );
     }
 
@@ -36,14 +36,15 @@ class __TwigTemplate_db59770f42d6f645e4a3a5300b94be98 extends Twig_Template
     }
 
     // line 7
-    public function block_parcInfo_body($context, array $blocks = array())
+    public function block_parcInfo_content($context, array $blocks = array())
     {
         // line 8
-        echo " 
+        echo "  <div class=\"row\" id='row2'>
+ 
   <h2>
 
         ";
-        // line 11
+        // line 12
         echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "os"), "name"), "html", null, true);
         echo " [ ";
         echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "os"), "version"), "html", null, true);
@@ -51,7 +52,7 @@ class __TwigTemplate_db59770f42d6f645e4a3a5300b94be98 extends Twig_Template
 
     </h2>
  
-    
+   </div> 
  
  
 ";
@@ -69,6 +70,6 @@ class __TwigTemplate_db59770f42d6f645e4a3a5300b94be98 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  47 => 11,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
+        return array (  48 => 12,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
     }
 }

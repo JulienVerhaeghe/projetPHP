@@ -11,7 +11,7 @@ class __TwigTemplate_900a266dd653ab8d6c3643d5590f554f extends Twig_Template
 
         $this->blocks = array(
             'title' => array($this, 'block_title'),
-            'sdzblog_body' => array($this, 'block_sdzblog_body'),
+            'parcInfo_content' => array($this, 'block_parcInfo_content'),
         );
     }
 
@@ -36,26 +36,27 @@ class __TwigTemplate_900a266dd653ab8d6c3643d5590f554f extends Twig_Template
     }
 
     // line 7
-    public function block_sdzblog_body($context, array $blocks = array())
+    public function block_parcInfo_content($context, array $blocks = array())
     {
         // line 8
-        echo " 
+        echo "  <div class=\"row\" id='row2'>
+ 
   <h2>
 
         ";
-        // line 11
+        // line 12
         echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "package"), "name"), "html", null, true);
         echo "
 
     </h2>
   
   ";
-        // line 15
+        // line 16
         if (($this->getAttribute($this->getAttribute($this->getContext($context, "package"), "logiciels"), "count") > 0)) {
-            // line 16
+            // line 17
             echo "    - Logiciel :
     ";
-            // line 17
+            // line 18
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getContext($context, "package"), "logiciels"));
             $context['loop'] = array(
@@ -72,16 +73,16 @@ class __TwigTemplate_900a266dd653ab8d6c3643d5590f554f extends Twig_Template
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["logiciel"]) {
-                // line 18
+                // line 19
                 echo "      ";
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "logiciel"), "name"), "html", null, true);
                 echo "
       ";
-                // line 19
+                // line 20
                 if ((!$this->getAttribute($this->getContext($context, "loop"), "last"))) {
                     echo " - ";
                 }
-                // line 20
+                // line 21
                 echo "    ";
                 ++$context['loop']['index0'];
                 ++$context['loop']['index'];
@@ -95,36 +96,36 @@ class __TwigTemplate_900a266dd653ab8d6c3643d5590f554f extends Twig_Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['logiciel'], $context['_parent'], $context['loop']);
             $context = array_merge($_parent, array_intersect_key($context, $_parent));
-            // line 21
+            // line 22
             echo "  ";
         }
-        // line 22
+        // line 23
         echo "
- <p>
+      <p class=\"bottom\">
     <a href=\"";
-        // line 24
+        // line 25
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_voir_liste_package"), "html", null, true);
         echo "\" class=\"btn\">
-      <i class=\"icon-chevron-left\"></i>
+     
       Retour à la liste
     </a>
     <a href=\"";
-        // line 28
+        // line 29
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_modifier_package", array("id" => $this->getAttribute($this->getContext($context, "package"), "id"))), "html", null, true);
         echo "\" class=\"btn\">
-      <i class=\"icon-edit\"></i>
+     
       Modifier le package
     </a>
     <a href=\"";
-        // line 32
+        // line 33
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_supprimer_package", array("id" => $this->getAttribute($this->getContext($context, "package"), "id"))), "html", null, true);
         echo "\" class=\"btn\">
-      <i class=\"icon-trash\"></i>
+    
       Supprimer le package
     </a>
   </p>
     
- 
+ </div>
  
 ";
     }
@@ -141,6 +142,6 @@ class __TwigTemplate_900a266dd653ab8d6c3643d5590f554f extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  120 => 32,  113 => 28,  106 => 24,  102 => 22,  99 => 21,  85 => 20,  81 => 19,  76 => 18,  59 => 17,  56 => 16,  54 => 15,  47 => 11,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
+        return array (  121 => 33,  114 => 29,  107 => 25,  103 => 23,  100 => 22,  86 => 21,  82 => 20,  77 => 19,  60 => 18,  57 => 17,  55 => 16,  48 => 12,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
     }
 }

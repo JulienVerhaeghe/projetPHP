@@ -99,18 +99,18 @@ class PackageController extends Controller implements ControleurStrategy {
 
       
         // On récupère l'entité correspondant à l'id $id
-        $os= $em->getRepository('JulienParcInformatiqueBundle:OS')
+        $os= $em->getRepository('JulienParcInformatiqueBundle:Package')
                     ->find($id);
         
         if($os === null)
         {
-          throw $this->createNotFoundException('OS [id='.$id.'] inexistant.');
+          throw $this->createNotFoundException('Package [id='.$id.'] inexistant.');
         }
     
 
         // Puis modifiez la ligne du render comme ceci, pour prendre en compte l'article :
-        return $this->render('JulienParcInformatiqueBundle:parcInfo:voir_OS.html.twig', array(
-          'os'        => $os,
+        return $this->render('JulienParcInformatiqueBundle:parcInfo:voir_package.html.twig', array(
+          'package'        => $os,
          
         ));
     }

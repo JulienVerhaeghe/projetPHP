@@ -10,7 +10,7 @@ class __TwigTemplate_f051468bb732344e91d32a610fc94c60 extends Twig_Template
         $this->parent = $this->env->loadTemplate("JulienParcInformatiqueBundle::layout.html.twig");
 
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'parcInfo_content' => array($this, 'block_parcInfo_content'),
         );
     }
 
@@ -25,10 +25,10 @@ class __TwigTemplate_f051468bb732344e91d32a610fc94c60 extends Twig_Template
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_parcInfo_content($context, array $blocks = array())
     {
         // line 4
-        echo " 
+        echo "<div class=\"row\" id='row2'>
   <h2>Ajouter un OS</h2>
  
   ";
@@ -40,7 +40,7 @@ class __TwigTemplate_f051468bb732344e91d32a610fc94c60 extends Twig_Template
      Attention : cet article sera ajouté directement
      sur la page d'accueil après validation du formulaire.
   </p>
- 
+ </div>
 ";
     }
 

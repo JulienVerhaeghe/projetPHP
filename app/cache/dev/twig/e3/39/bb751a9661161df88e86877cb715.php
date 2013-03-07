@@ -10,7 +10,7 @@ class __TwigTemplate_e339bb751a9661161df88e86877cb715 extends Twig_Template
         $this->parent = $this->env->loadTemplate("JulienParcInformatiqueBundle::layout.html.twig");
 
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'parcInfo_content' => array($this, 'block_parcInfo_content'),
         );
     }
 
@@ -25,22 +25,21 @@ class __TwigTemplate_e339bb751a9661161df88e86877cb715 extends Twig_Template
     }
 
     // line 5
-    public function block_body($context, array $blocks = array())
+    public function block_parcInfo_content($context, array $blocks = array())
     {
         // line 6
-        echo " 
-  <h2>Ajouter une Salle</h2>
- 
+        echo "<div class=\"row\" id='row2'>
+  
   ";
-        // line 9
+        // line 8
         $this->env->loadTemplate("JulienParcInformatiqueBundle:parcInfo:formulaire.html.twig")->display($context);
-        // line 10
+        // line 9
         echo " 
   <p>
      Attention : cet article sera ajouté directement
      sur la page d'accueil après validation du formulaire.
   </p>
- 
+ </div>
 ";
     }
 
@@ -56,6 +55,6 @@ class __TwigTemplate_e339bb751a9661161df88e86877cb715 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  38 => 10,  36 => 9,  31 => 6,  28 => 5,);
+        return array (  37 => 9,  35 => 8,  31 => 6,  28 => 5,);
     }
 }

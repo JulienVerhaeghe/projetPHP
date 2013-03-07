@@ -4,19 +4,19 @@
   Ordinateur - {{ parent() }}
 {% endblock %}
  
-{% block parcInfo_body %}
- 
+{% block parcInfo_content %}
+ <div class="row" id='row2'>
   <h2>liste des Ordinateurs</h2>
   
   <ul>
   {% for ordi in liste_ordi %}
           <li><a href="{{ path('parcInfo_voir_ordi', {'id': ordi.id}) }}">{{ ordi.name }} | </a></li>
   {% else %}
-    <li>Pas d'utilisateur trouvé.</li>
+    <li>Pas d'ordinateur trouvé.</li>
   {% endfor %}
 </ul>
-   
+   <div class='bottom'><a href="{{ path('parcInfo_ajouter_ordi') }}">Ajouter ordinateur</a></div>
   
  
- 
+ </div>
 {% endblock %}

@@ -1,0 +1,23 @@
+{% extends "JulienParcInformatiqueBundle::layout.html.twig" %}
+ 
+{% block title %}
+  OS - {{ parent() }}
+{% endblock %}
+ 
+{% block parcInfo_content %}
+ <div class="row" id='row2'>
+  <h2>liste des OS</h2>
+  
+  <ul>
+  {% for produit in liste_os %}
+          <li><a href="{{ path('parcInfo_voir_OS', {'id': produit.id}) }}">{{ produit.name }} |  </a>
+                      <a href="{{ path('parcInfo_supprimer_OS', {'id': produit.id}) }}" class="btn">Supprimer</a></li>
+  {% else %}
+    <li>Pas d'OS trouvé.</li>
+  {% endfor %}
+</ul>
+   <div class='bottom'><a href="{{ path('parcInfo_ajouter_os') }}">Ajouter ordinateur</a></div>
+  
+ 
+ </div>
+{% endblock %}
