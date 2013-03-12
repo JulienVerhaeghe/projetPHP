@@ -4,12 +4,15 @@
 <div class="row" id='row2'>
 <h2>liste des salles</h2>
   
-  <ul>
+  <ul class='fistLi'>
   {% for salle in liste %}
           <li><a id='produit' href="{{ path('parcInfo_voir_salle', {'id': salle.id}) }}">{{ salle.nom }}</a>
-                  
-                      <a href="{{ path('parcInfo_modifier_salle', {'id': salle.id}) }}" class="btn">Modifier</a>
-                      <a href="{{ path('parcInfo_supprimer_salle', {'id': salle.id}) }}" class="btn">Supprimer</a>
+              <ul class="secondUl">
+                  <li> <a href="{{ path('parcInfo_modifier_salle', {'id': salle.id}) }}" class="btn">Modifier</a></li>
+                  <li><a href="{{ path('parcInfo_supprimer_salle', {'id': salle.id}) }}" class="btn">Supprimer</a></li>
+              </ul>
+                     
+                      
                                
     
     

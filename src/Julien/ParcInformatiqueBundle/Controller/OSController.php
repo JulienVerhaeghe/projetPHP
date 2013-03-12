@@ -54,8 +54,13 @@ class OSController extends Controller implements ControleurStrategy {
                                ->findAll();
         
         // Puis modifiez la ligne du render comme ceci, pour prendre en compte l'article :
-        return $this->render('JulienParcInformatiqueBundle:parcInfo:voir_liste_os.html.twig', array(
-                'liste_os' => $liste_os
+        return $this->render('JulienParcInformatiqueBundle:parcInfo:voir_liste.html.twig', array(
+                'liste' => $liste_os,
+                'title' => 'OS',
+                'lien_voir' => 'parcInfo_voir_OS',
+                'lien_delete' => 'parcInfo_supprimer_OS',
+                'lien_update'=> 'parcInfo_modifier_OS',
+                'lien_post' => 'parcInfo_ajouter_OS'
         ));
     }
      public function voirAction($id){

@@ -41,7 +41,7 @@ class Salle
      */
     private $localisation;
 
-  
+ 
     /**
      * Get id
      *
@@ -124,4 +124,14 @@ class Salle
     {
         return $this->description;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->ordinateurs = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+   
+
 }

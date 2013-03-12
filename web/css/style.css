@@ -14,6 +14,13 @@
 .contextMenu{
   display: none;
 }
+
+
+/*Menu*/
+
+.nav{
+    padding-left:  0;
+}
 .row{
     float: left;
     margin-right: 15px;
@@ -27,38 +34,61 @@ a.activate{
 
 #row1 li a{
     text-decoration: none;
-    color: black;
-    border : 1px solid #c67605;
-    padding: 5px;
-    text-align: center;
-    margin-bottom: 5px;
-    display: block;
-    width: 100px;
+color: black;
+border-left: 3px solid #c67605;
+padding: 5px;
+margin-bottom: 5px;
+display: block;
+width: 100px;
 }
-#row2 li{
-     border : 1px solid #c67605;
+#row2 ul.fistLi > li{
+     border-bottom:  1px solid #c67605;
+     clear: left;
 }
-#row2 ul{
+#row2  ul.fistLi{
     width: 500px;
 }
-#row2 li a{
-    text-decoration: none;
-    color: black;
-    
-    padding: 10px 20px 10px 20px;
-    display: inline-block;
-    
-}
+
 #row2 li a:hover{
     background-color: #c67605;
     
 }
-#row2 li a#produit{
+#row2 ul.fistLi > li a#produit{
     text-transform: uppercase;
     font-size: 1.2em;
     font-weight: bold;
 }
+#row2 ul.fistLi > li a{
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px 10px 20px;
+    display: inline-block;  
+}
+#row2 ul.secondUl > li a{
+    padding: 0;
+   
+}
 
 li {
    list-style: none;
+}
+li a{
+    text-decoration: none;
+    color: black;
+}
+ul.secondUl{
+    width: 150px;
+    float: right;
+     
+}
+ul.secondUl li {
+ 
+}
+/* **************FORM */ 
+div label{
+    width: 200px;
+    display: inline-block;
+}
+.formulaire{
+    margin-top: 20px;
 }

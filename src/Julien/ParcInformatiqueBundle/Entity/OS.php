@@ -26,7 +26,7 @@ class OS
      *
      * @ORM\Column(name="name", type="string", length=255)
      */
-    private $name;
+    private $nom;
 
     /**
      * @var string
@@ -46,28 +46,6 @@ class OS
         return $this->id;
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return OS
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string 
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
 
     /**
      * Set version
@@ -90,5 +68,28 @@ class OS
     public function getVersion()
     {
         return $this->version;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     * @return OS
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+    
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string 
+     */
+    public function getNom()
+    {
+        return $this->nom;
     }
 }

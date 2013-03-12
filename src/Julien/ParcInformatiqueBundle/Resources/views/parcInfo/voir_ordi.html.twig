@@ -4,11 +4,11 @@
   Lecture d'un ordinateur - {{ parent() }}
 {% endblock %}
  
-{% block parcInfo_body %}
- 
+{% block parcInfo_content %}
+  <div class="row" id='row2'>
   <h2>
 
-        {{ ordi.name }} [ {{ ordi.salle.nom}} ]
+        {{ ordi.nom }} [ {{ ordi.salle.nom}} ]
 
     </h2>
  {% if ordi.os.count > 0 %}
@@ -41,5 +41,5 @@
       Supprimer l'ordi
     </a>
   </p>
- 
+ </div>
 {% endblock %}

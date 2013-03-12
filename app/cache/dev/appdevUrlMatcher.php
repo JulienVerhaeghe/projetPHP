@@ -118,6 +118,11 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\SalleController::voirAction',)), array('_route' => 'parcInfo_voir_salle'));
         }
 
+        // parcInfo_voir_logiciel
+        if (0 === strpos($pathinfo, '/logiciel') && preg_match('#^/logiciel/(?P<id>[^/]+)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\LogicielController::voirAction',)), array('_route' => 'parcInfo_voir_logiciel'));
+        }
+
         // parcInfo_voir_reference
         if (0 === strpos($pathinfo, '/reference') && preg_match('#^/reference/(?P<id>[^/]+)$#s', $pathinfo, $matches)) {
             return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\ReferenceController::voirAction',)), array('_route' => 'parcInfo_voir_reference'));
@@ -138,13 +143,14 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\OSController::voirAction',)), array('_route' => 'parcInfo_voir_OS'));
         }
 
-        // parcInfo_voir_liste_salle
-        if (rtrim($pathinfo, '/') === '/listeSalle') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'parcInfo_voir_liste_salle');
-            }
+        // parcInfo_voir_peripherique
+        if (0 === strpos($pathinfo, '/peripherique') && preg_match('#^/peripherique/(?P<id>[^/]+)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\PeripheriqueController::voirAction',)), array('_route' => 'parcInfo_voir_peripherique'));
+        }
 
-            return array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\SalleController::voirListeAction',  '_route' => 'parcInfo_voir_liste_salle',);
+        // parcInfo_voir_liste_salle
+        if (0 === strpos($pathinfo, '/listeSalle') && preg_match('#^/listeSalle(?:/(?P<page>[^/]+))?$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\SalleController::voirListeAction',  'page' => '1',)), array('_route' => 'parcInfo_voir_liste_salle'));
         }
 
         // parcInfo_voir_liste_ordi
@@ -156,22 +162,22 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\OrdiController::voirListeAction',  '_route' => 'parcInfo_voir_liste_ordi',);
         }
 
-        // parcInfo_voir_liste_os
+        // parcInfo_voir_liste_OS
         if (rtrim($pathinfo, '/') === '/listeOS') {
             if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'parcInfo_voir_liste_os');
+                return $this->redirect($pathinfo.'/', 'parcInfo_voir_liste_OS');
             }
 
-            return array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\OSController::voirListeAction',  '_route' => 'parcInfo_voir_liste_os',);
+            return array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\OSController::voirListeAction',  '_route' => 'parcInfo_voir_liste_OS',);
         }
 
         // parcInfo_voir_liste_logiciel
-        if (rtrim($pathinfo, '/') === '/listeOS') {
+        if (rtrim($pathinfo, '/') === '/listeLogiciel') {
             if (substr($pathinfo, -1) !== '/') {
                 return $this->redirect($pathinfo.'/', 'parcInfo_voir_liste_logiciel');
             }
 
-            return array (  '_controller' => 'JulienParcInformatiqueBundle:Logiciel:voirListe',  '_route' => 'parcInfo_voir_liste_logiciel',);
+            return array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\LogicielController::voirListeAction',  '_route' => 'parcInfo_voir_liste_logiciel',);
         }
 
         // parcInfo_voir_liste_peripherique
@@ -180,7 +186,7 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->redirect($pathinfo.'/', 'parcInfo_voir_liste_peripherique');
             }
 
-            return array (  '_controller' => 'JulienParcInformatiqueBundle:Peripherique:voirListe',  '_route' => 'parcInfo_voir_liste_peripherique',);
+            return array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\PeripheriqueController::voirListeAction',  '_route' => 'parcInfo_voir_liste_peripherique',);
         }
 
         // parcInfo_voir_liste_package
@@ -214,17 +220,17 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         // parcInfo_ajouter_logiciel
         if ($pathinfo === '/ajouter_logiciel') {
-            return array (  '_controller' => 'JulienParcInformatiqueBundle:Logiciel:ajouter',  '_route' => 'parcInfo_ajouter_logiciel',);
+            return array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\LogicielController::ajouterAction',  '_route' => 'parcInfo_ajouter_logiciel',);
         }
 
-        // parcInfo_ajouter_os
+        // parcInfo_ajouter_OS
         if ($pathinfo === '/ajouter_OS') {
-            return array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\OSController::ajouterAction',  '_route' => 'parcInfo_ajouter_os',);
+            return array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\OSController::ajouterAction',  '_route' => 'parcInfo_ajouter_OS',);
         }
 
         // parcInfo_ajouter_peripherique
         if ($pathinfo === '/ajouter_peripherique') {
-            return array (  '_controller' => 'JulienParcInformatiqueBundle:Peripherique:ajouter',  '_route' => 'parcInfo_ajouter_peripherique',);
+            return array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\PeripheriqueController::ajouterAction',  '_route' => 'parcInfo_ajouter_peripherique',);
         }
 
         // parcInfo_modifier_salle
@@ -245,6 +251,21 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // parcInfo_modifier_package
         if (0 === strpos($pathinfo, '/modifier_package') && preg_match('#^/modifier_package/(?P<id>[^/]+)$#s', $pathinfo, $matches)) {
             return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\PackageController::modifierAction',)), array('_route' => 'parcInfo_modifier_package'));
+        }
+
+        // parcInfo_modifier_peripherique
+        if (0 === strpos($pathinfo, '/modifier_peripherique') && preg_match('#^/modifier_peripherique/(?P<id>[^/]+)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\PeripheriqueController::modifierAction',)), array('_route' => 'parcInfo_modifier_peripherique'));
+        }
+
+        // parcInfo_modifier_OS
+        if (0 === strpos($pathinfo, '/modifier_OS') && preg_match('#^/modifier_OS/(?P<id>[^/]+)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\OSController::modifierAction',)), array('_route' => 'parcInfo_modifier_OS'));
+        }
+
+        // parcInfo_modifier_logiciel
+        if (0 === strpos($pathinfo, '/modifier_logiciel') && preg_match('#^/modifier_logiciel/(?P<id>[^/]+)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\LogicielController::modifierAction',)), array('_route' => 'parcInfo_modifier_logiciel'));
         }
 
         // parcInfo_supprimer_salle
@@ -270,6 +291,16 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // parcInfo_supprimer_package
         if (0 === strpos($pathinfo, '/supprimer_package') && preg_match('#^/supprimer_package/(?P<id>[^/]+)$#s', $pathinfo, $matches)) {
             return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\PackageController::supprimerAction',)), array('_route' => 'parcInfo_supprimer_package'));
+        }
+
+        // parcInfo_supprimer_peripherique
+        if (0 === strpos($pathinfo, '/supprimer_peripherique') && preg_match('#^/supprimer_peripherique/(?P<id>[^/]+)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\PeripheriqueController::supprimerAction',)), array('_route' => 'parcInfo_supprimer_peripherique'));
+        }
+
+        // parcInfo_supprimer_logiciel
+        if (0 === strpos($pathinfo, '/supprimer_logiciel') && preg_match('#^/supprimer_logiciel/(?P<id>[^/]+)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Julien\\ParcInformatiqueBundle\\Controller\\LogicielController::supprimerAction',)), array('_route' => 'parcInfo_supprimer_logiciel'));
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

@@ -1,10 +1,4 @@
 <?php
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of SalleController
  *
@@ -30,19 +24,22 @@ class SalleController extends Controller implements ControleurStrategy  {
         
         if($salle === null)
         {
+            //@TODO réaliser une page 404 avec pour parametre la raison du bug
           throw $this->createNotFoundException('Salle [id='.$id.'] inexistant.');
         }
         
-        // On récupère la liste des commentaires
+        // On récupère la liste des ordinateurs présent dans la salle
         $liste_ordinateur = $em->getRepository('JulienParcInformatiqueBundle:Ordinateur')
                                ->findAll();
-
+                       
         // Puis modifiez la ligne du render comme ceci, pour prendre en compte l'article :
         return $this->render('JulienParcInformatiqueBundle:parcInfo:voir_salle.html.twig', array(
           'salle'        => $salle,
-          'liste_salle' => $liste_ordinateur
+          'liste_ordinateur' => $liste_ordinateur
         ));
     }
+    
+    /* recuperer une liste d'objet */
      public function voirlisteAction() {
         // On récupère l'EntityManager
         $em = $this->getDoctrine()
@@ -52,9 +49,14 @@ class SalleController extends Controller implements ControleurStrategy  {
         $liste_salle = $em->getRepository('JulienParcInformatiqueBundle:Salle')
                                ->findAll();
         
-        // Puis modifiez la ligne du render comme ceci, pour prendre en compte l'article :
-        return $this->render('JulienParcInformatiqueBundle:parcInfo:voir_liste_salle.html.twig',array(
-            'liste' => $liste_salle
+        //  afficher la liste en completant les variables necessaire au template
+        return $this->render('JulienParcInformatiqueBundle:parcInfo:voir_liste.html.twig',array(
+            'liste' => $liste_salle,
+            'title' => 'salle',
+            'lien_voir' => 'parcInfo_voir_salle',
+            'lien_delete' => 'parcInfo_supprimer_salle',
+            'lien_update'=> 'parcInfo_modifier_salle',
+            'lien_post' => 'parcInfo_ajouter_salle'
         ));
                 
         

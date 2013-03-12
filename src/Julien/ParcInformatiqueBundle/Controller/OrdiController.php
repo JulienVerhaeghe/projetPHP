@@ -1,12 +1,8 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
- * Description of OSController
+ * Description of OrdiController
  *
  * @author psid
  */
@@ -33,8 +29,7 @@ class OrdiController extends Controller implements ControleurStrategy {
       }
 
       if ($this->get('request')->getMethod() == 'GET') {
-        // Si la requête est en POST, on supprimera la salle
-
+        
         $this->get('session')->getFlashBag()->add('info', 'ordi bien supprimé');
         $em->remove($ordi);
         $em->flush();
@@ -81,12 +76,17 @@ class OrdiController extends Controller implements ControleurStrategy {
                    ->getEntityManager();
         
         // On récupère la liste des os
-        $liste_ordi = $em->getRepository('JulienParcInformatiqueBundle:OS')
+        $liste_ordi = $em->getRepository('JulienParcInformatiqueBundle:Ordinateur')
                                ->findAll();
         
         
-        return $this->render('JulienParcInformatiqueBundle:parcInfo:voir_liste_ordi.html.twig', array(
-                'liste_ordi' => $liste_ordi
+        return $this->render('JulienParcInformatiqueBundle:parcInfo:voir_liste.html.twig', array(
+                'liste' => $liste_ordi,
+                'title' => 'ordinateur',
+                'lien_voir' => 'parcInfo_voir_ordi',
+                'lien_delete' => 'parcInfo_supprimer_ordi',
+                'lien_update'=> 'parcInfo_modifier_ordi',
+                'lien_post' => 'parcInfo_ajouter_ordi'
         ));
     }
      public function voirAction($id){

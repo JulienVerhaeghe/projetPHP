@@ -45,7 +45,7 @@ class __TwigTemplate_db59770f42d6f645e4a3a5300b94be98 extends Twig_Template
 
         ";
         // line 12
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "os"), "name"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "os"), "nom"), "html", null, true);
         echo " [ ";
         echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "os"), "version"), "html", null, true);
         echo " ]

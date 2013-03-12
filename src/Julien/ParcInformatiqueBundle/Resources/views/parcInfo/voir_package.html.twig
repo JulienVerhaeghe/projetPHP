@@ -9,14 +9,14 @@
  
   <h2>
 
-        {{ package.name }}
+        {{ package.nom }}
 
     </h2>
   
   {% if package.logiciels.count > 0 %}
     - Logiciel :
     {% for logiciel in package.logiciels %}
-      {{ logiciel.name }}
+    <a href=''>{{ logiciel.nom }}</a>
       {% if not loop.last %} - {% endif %}
     {% endfor %}
   {% endif %}

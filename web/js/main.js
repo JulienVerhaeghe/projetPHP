@@ -15,7 +15,7 @@ $(function() {
 
 
 function refreshListener(){
-
+ deletePreviousListener();
  $('.nav').on('click','a', function(event){
 
             event.preventDefault();
@@ -26,20 +26,14 @@ function refreshListener(){
             toggleButton($this);
             update($this.attr("href"));
     });
-     $('ul,.bottom').on('click','a', function(event){
-
-            event.preventDefault();
-            var $this = $(this);
-            //on utilise history pour pouvoir naviguer avec retour arriére et avant malgré l'usage de l'ajax
-            history.pushState(null,null,$this.attr("href"));
-            //chargement de la page demandé
-            
-            update($this.attr("href"));
-    });
+     
 
 }
     
-    
+function  deletePreviousListener(){
+    console.log('deletePreviousListener');
+     $('.nav,ul,.bottom').off('click','a',refreshListener);
+}   
     
         
 function toggleButton(button){
@@ -64,7 +58,17 @@ function update(url){
              console.log(contenu);
              $('#row2').html(contenu.html());
              $('#row2').fadeIn();
-            refreshListener();
+            //refreshListener();
+            $('#row2 ul,#row2 .bottom').on('click','a', function(event){
+
+            event.preventDefault();
+            var $this = $(this);
+            //on utilise history pour pouvoir naviguer avec retour arriére et avant malgré l'usage de l'ajax
+            history.pushState(null,null,$this.attr("href"));
+            //chargement de la page demandé
+            
+            update($this.attr("href"));
+    });
      });
  }
    });

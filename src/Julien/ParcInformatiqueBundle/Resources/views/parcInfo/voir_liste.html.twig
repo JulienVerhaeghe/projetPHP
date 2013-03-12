@@ -1,0 +1,23 @@
+{% extends "JulienParcInformatiqueBundle::layout.html.twig" %}
+
+{% block parcInfo_content %}
+<div class="row" id='row2'>
+<h2>liste des {{title}}s</h2>
+  
+  <ul class='fistLi'>
+      
+  {% for item in liste %}
+          <li><a id='produit' href="{{ path(lien_voir, {'id': item.id}) }}">{{ item.nom }}</a>
+              <ul class="secondUl">
+                  <li> <a href="{{ path(lien_update, {'id': item.id}) }}" class="btn">Modifier</a></li>
+                  <li><a href="{{ path(lien_delete, {'id': item.id}) }}" class="btn">Supprimer</a></li>
+              </ul>
+     
+</li>
+  {% else %}
+    <li>Aucun(e) {{title}}</li>
+  {% endfor %}
+</ul>
+<div class='bottom'><a href="{{ path(lien_post)}} ">Ajouter {{title}}</a></div>
+</div>
+{% endblock %}

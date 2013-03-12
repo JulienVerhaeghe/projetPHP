@@ -11,4 +11,12 @@
 <div class="well">
   {{ salle.description }}
 </div>
- 
+- Ordinateur :
+{% for item in liste_ordinateur %}
+
+<ul>
+    <li><a href="{{ path('parcInfo_voir_ordi', {'id': item.id}) }}"> {{ item.nom }}</a> </li>
+</ul>
+     
+        
+    {% endfor %}

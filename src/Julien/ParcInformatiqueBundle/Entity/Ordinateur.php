@@ -50,7 +50,7 @@ class Ordinateur
      *
      * @ORM\Column(name="name", type="string", length=255)
      */
-    private $name;
+    private $nom;
 
     /**
      * Get id
@@ -62,28 +62,7 @@ class Ordinateur
         return $this->id;
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return Ordinateur
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
     
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string 
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
 
     
 
@@ -224,4 +203,50 @@ class Ordinateur
     }
 
     
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     * @return Ordinateur
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+    
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string 
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Add os
+     *
+     * @param \Julien\ParcInformatiqueBundle\Entity\OS $os
+     * @return Ordinateur
+     */
+    public function addO(\Julien\ParcInformatiqueBundle\Entity\OS $os)
+    {
+        $this->os[] = $os;
+    
+        return $this;
+    }
+
+    /**
+     * Remove os
+     *
+     * @param \Julien\ParcInformatiqueBundle\Entity\OS $os
+     */
+    public function removeO(\Julien\ParcInformatiqueBundle\Entity\OS $os)
+    {
+        $this->os->removeElement($os);
+    }
 }

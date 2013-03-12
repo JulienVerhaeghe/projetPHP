@@ -79,13 +79,16 @@ class __TwigTemplate_16265b4d26bdd2833d387a2d6b2b884a extends Twig_Template
         echo "\">Packages</a></li>
       <li><a href=\"";
         // line 18
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_voir_liste_os"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_voir_liste_OS"), "html", null, true);
         echo "\">OS</a></li>
       <li><a href=\"";
         // line 19
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_voir_liste_peripherique"), "html", null, true);
         echo "\">Périphérique</a></li>
-      <li><a href=\"#logiciel\">Logiciel</a></li>
+      <li><a href=\"";
+        // line 20
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("parcInfo_voir_liste_logiciel"), "html", null, true);
+        echo "\">Logiciel</a></li>
     </ul>
   </div>
   ";
@@ -124,6 +127,6 @@ class __TwigTemplate_16265b4d26bdd2833d387a2d6b2b884a extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  107 => 30,  104 => 29,  98 => 26,  95 => 25,  86 => 19,  82 => 18,  78 => 17,  74 => 16,  70 => 15,  65 => 12,  62 => 11,  57 => 29,  55 => 25,  52 => 24,  49 => 11,  45 => 8,  42 => 7,  35 => 4,  32 => 3,);
+        return array (  110 => 30,  107 => 29,  101 => 26,  98 => 25,  90 => 20,  86 => 19,  82 => 18,  78 => 17,  74 => 16,  70 => 15,  65 => 12,  62 => 11,  57 => 29,  55 => 25,  52 => 24,  49 => 11,  45 => 8,  42 => 7,  35 => 4,  32 => 3,  80 => 21,  77 => 20,  68 => 18,  58 => 13,  54 => 12,  46 => 10,  41 => 9,  34 => 5,  31 => 4,  28 => 3,);
     }
 }

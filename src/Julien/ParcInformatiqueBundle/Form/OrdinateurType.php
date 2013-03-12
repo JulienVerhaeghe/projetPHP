@@ -11,7 +11,7 @@ class OrdinateurType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name','text')
+            ->add('nom','text')
             ->add('salle', 'entity', array(
                 'class' => 'JulienParcInformatiqueBundle:Salle','property' => 'nom'))
             ->add('reference', 'entity', array(

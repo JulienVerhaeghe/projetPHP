@@ -6,6 +6,10 @@ parcInfo_voir_salle:
     pattern:   /salle/{id}
     defaults:  { _controller: JulienParcInformatiqueBundle:Salle:voir }
 
+parcInfo_voir_logiciel:
+    pattern:   /logiciel/{id}
+    defaults:  { _controller: JulienParcInformatiqueBundle:Logiciel:voir }
+
 parcInfo_voir_reference:
     pattern:   /reference/{id}
     defaults:  { _controller: JulienParcInformatiqueBundle:Reference:voir }
@@ -21,21 +25,25 @@ parcInfo_voir_package:
 parcInfo_voir_OS:
     pattern:   /OS/{id}
     defaults:  { _controller: JulienParcInformatiqueBundle:OS:voir}
+    
+parcInfo_voir_peripherique:
+    pattern:   /peripherique/{id}
+    defaults:  { _controller: JulienParcInformatiqueBundle:Peripherique:voir}
 #------------------------ voir liste d'entité
 parcInfo_voir_liste_salle:
-    pattern:   /listeSalle/
-    defaults:  { _controller: JulienParcInformatiqueBundle:Salle:voirListe }
+    pattern:   /listeSalle/{page}
+    defaults:  { _controller: JulienParcInformatiqueBundle:Salle:voirListe, page: 1  }
     
 parcInfo_voir_liste_ordi:
     pattern:   /listeOrdi/
     defaults:  { _controller: JulienParcInformatiqueBundle:Ordi:voirListe }
 
-parcInfo_voir_liste_os:
+parcInfo_voir_liste_OS:
     pattern:   /listeOS/
     defaults:  { _controller: JulienParcInformatiqueBundle:OS:voirListe }
 
 parcInfo_voir_liste_logiciel:
-    pattern:   /listeOS/
+    pattern:   /listeLogiciel/
     defaults:  { _controller: JulienParcInformatiqueBundle:Logiciel:voirListe }
 
 parcInfo_voir_liste_peripherique:
@@ -66,7 +74,7 @@ parcInfo_ajouter_logiciel:
     pattern:   /ajouter_logiciel
     defaults:  { _controller: JulienParcInformatiqueBundle:Logiciel:ajouter}
 
-parcInfo_ajouter_os:
+parcInfo_ajouter_OS:
     pattern:   /ajouter_OS
     defaults:  { _controller: JulienParcInformatiqueBundle:OS:ajouter}
     
@@ -89,6 +97,18 @@ parcInfo_modifier_reference:
 parcInfo_modifier_package:
     pattern:   /modifier_package/{id}
     defaults:  { _controller: JulienParcInformatiqueBundle:Package:modifier}
+    
+parcInfo_modifier_peripherique:
+    pattern:   /modifier_peripherique/{id}
+    defaults:  { _controller: JulienParcInformatiqueBundle:Peripherique:modifier}
+
+parcInfo_modifier_OS:
+    pattern:   /modifier_OS/{id}
+    defaults:  { _controller: JulienParcInformatiqueBundle:OS:modifier}
+
+parcInfo_modifier_logiciel:
+    pattern:   /modifier_logiciel/{id}
+    defaults:  { _controller: JulienParcInformatiqueBundle:Logiciel:modifier}
 #------------------------ supprimer entité
 parcInfo_supprimer_salle:
     pattern:   /supprimer_salle/{id}
@@ -109,3 +129,11 @@ parcInfo_supprimer_reference:
 parcInfo_supprimer_package:
     pattern:   /supprimer_package/{id}
     defaults:  { _controller: JulienParcInformatiqueBundle:Package:supprimer}
+
+parcInfo_supprimer_peripherique:
+    pattern:   /supprimer_peripherique/{id}
+    defaults:  { _controller: JulienParcInformatiqueBundle:Peripherique:supprimer}
+    
+parcInfo_supprimer_logiciel:
+    pattern:   /supprimer_logiciel/{id}
+    defaults:  { _controller: JulienParcInformatiqueBundle:Logiciel:supprimer}

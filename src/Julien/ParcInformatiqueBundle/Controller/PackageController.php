@@ -88,8 +88,13 @@ class PackageController extends Controller implements ControleurStrategy {
                                ->findAll();
         
         // Puis modifiez la ligne du render comme ceci, pour prendre en compte l'article :
-        return $this->render('JulienParcInformatiqueBundle:parcInfo:voir_liste_package.html.twig', array(
-                'liste_package' => $liste_package
+        return $this->render('JulienParcInformatiqueBundle:parcInfo:voir_liste.html.twig', array(
+                'liste' => $liste_package,
+                'title' => 'package',
+                'lien_voir' => 'parcInfo_voir_package',
+                'lien_delete' => 'parcInfo_supprimer_package',
+                'lien_update'=> 'parcInfo_modifier_package',
+                'lien_post' => 'parcInfo_ajouter_package'
         ));
     }
      public function voirAction($id){

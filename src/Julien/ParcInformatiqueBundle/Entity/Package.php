@@ -26,7 +26,7 @@ class Package
      *
      * @ORM\Column(name="name", type="string", length=255)
      */
-    private $name;
+    private $nom;
 
     /**
     * @ORM\ManyToMany(targetEntity="Julien\ParcInformatiqueBundle\Entity\Logiciel", cascade={"persist"})
@@ -44,28 +44,7 @@ class Package
         return $this->id;
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return Package
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
     
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string 
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
     /**
      * Constructor
      */
@@ -114,4 +93,27 @@ class Package
     $this->logiciels = $logiciels;
     return $this;
   }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     * @return Package
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+    
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string 
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
 }

@@ -1,0 +1,25 @@
+{% extends "JulienParcInformatiqueBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Périphérique - {{ parent() }}
+{% endblock %}
+ 
+{% block parcInfo_content %}
+  <div class="row" id='row2'>
+ 
+  <h2>liste des périphérique</h2>
+  
+  <ul>
+  {% for periph in liste_peripherique %}
+          <li><a href="{{ path('parcInfo_voir_peripherique', {'id': periph.id}) }}">{{ periph.name }}</a>  <a href="{{ path('parcInfo_modifier_peripherique', {'id': periph.id}) }}" class="btn">Modifier</a>
+                      <a href="{{ path('parcInfo_supprimer_peripherique', {'id': periph.id}) }}" class="btn">Supprimer</a></li>
+  {% else %}
+    <li>Pas de periphérique trouvé.</li>
+  {% endfor %}
+</ul>
+  <div class='bottom'><a href="{{ path('parcInfo_ajouter_peripherique') }}">Ajouter Périphérique</a></div>
+   </div>
+  
+ 
+ 
+{% endblock %}
